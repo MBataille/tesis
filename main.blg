@@ -1,0 +1,71 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: plain.bst
+Database file #1: bibliografia.bib
+Warning--I didn't find a database entry for "LS:b"
+Warning--I didn't find a database entry for "LS:a"
+Warning--I didn't find a database entry for "RD:VanagEpstein"
+Warning--I didn't find a database entry for "RD:Winfree"
+Warning--I didn't find a database entry for "RD:Barkley"
+Warning--I didn't find a database entry for "NonLocal:Optics"
+Warning--I didn't find a database entry for "NonLocal:Neuron"
+Warning--I didn't find a database entry for "NonLocal:Vegetation"
+Warning--I didn't find a database entry for "NonLocal:Stabilize"
+Warning--I didn't find a database entry for "Raman:Stabilize"
+Warning--I didn't find a database entry for "Raman:Agrawal"
+Warning--I didn't find a database entry for "Raman:FB"
+Warning--I didn't find a database entry for "Raman:PH"
+Warning--I didn't find a database entry for "Raman:AkhAnk"
+Warning--I didn't find a database entry for "Raman:SKV"
+Warning--I didn't find a database entry for "Raman:LCC"
+Warning--I didn't find a database entry for "SpiralChimera:Kuramoto"
+Warning--I didn't find a database entry for "SC:FHN2018"
+Warning--I didn't find a database entry for "SC:Eco2018"
+Warning--I didn't find a database entry for "SC:BA2020"
+Warning--I didn't find a database entry for "SC:Totz2017"
+Warning--I didn't find a database entry for "SC:Totz2020"
+Warning--I didn't find a database entry for "SC:Omelchenko2020"
+Warning--I didn't find a database entry for "SC:Bataille"
+You've used 6 entries,
+            2118 wiz_defined-function locations,
+            588 strings with 5534 characters,
+and the built_in function-call counts, 1554 in all, are:
+= -- 157
+> -- 48
+< -- 1
++ -- 20
+- -- 14
+* -- 88
+:= -- 277
+add.period$ -- 19
+call.type$ -- 6
+change.case$ -- 24
+chr.to.int$ -- 0
+cite$ -- 6
+duplicate$ -- 70
+empty$ -- 133
+format.name$ -- 14
+if$ -- 323
+int.to.chr$ -- 0
+int.to.str$ -- 6
+missing$ -- 7
+newline$ -- 33
+num.names$ -- 12
+pop$ -- 21
+preamble$ -- 1
+purify$ -- 19
+quote$ -- 0
+skip$ -- 49
+stack$ -- 0
+substring$ -- 80
+swap$ -- 11
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 22
+warning$ -- 0
+while$ -- 18
+width$ -- 7
+write$ -- 67
+(There were 24 warnings)

@@ -1,0 +1,91 @@
+% se puede agregar la opción [english] para 
+%  memorias o tesis en inglés (borrando el archivo .aux)
+\documentclass[english]{umemoria} 
+
+\depto{Departamento de Física}
+\author{Martin Lukas Bataille Gonzalez}
+\title{Dynamics of particle-like solutions in non-local systems}
+
+% incluir ambos comandos para una doble titulación
+%  o quitar el comando que no aplica
+% \memoria{Ingenier[o/a?] Civil en ???}
+\tesis{Magíster en Ciencias mención Fisica}
+%\tesis{Doctor en ???} % incluir solo este comando para doctorados
+
+% puede haber varios profesores guía seperados por coma;
+% pero si es una memoria, solo puede haber un profesor guía
+\guia{Marcel Clerc Gavilan} 
+
+% puede haber varios profesores co-guía seperados por coma;
+% pero si es una memoria, el profesor co-guía será el primer
+% integrante de la comisión
+%\coguia{Nombre Completo Co-Guía} % incluir en caso de co-guía de *tesis*
+
+%\cotutela{Nombre Institución} % incluir en caso de cotutela
+
+\comision{Marcel Clerc, Karin Alfaro, Oleh Omel'chenko, Ignacio Bordeu, Mustapha Tlidi}
+
+%\auspicio{Nombre Institución} % incluir en caso de recibir financiamiento
+
+% tiene que ser el año en que se da el examen de título/grado (defensa)
+%\anho{2021} % incluir solo para reemplazar el año actual
+
+\usepackage{lipsum}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{svg}
+
+\begin{document}
+
+\theoremstyle{definition}
+\newtheorem{exmp}{Example}[section]
+\newcommand{\matr}[1]{\mathbf{#1}}
+
+\frontmatter
+\maketitle
+
+\begin{resumen}
+\lipsum[1-4]
+\end{resumen}
+
+% opcional: incluir para tesis en inglés;
+%  en este caso hay que tener el resumen y abstract
+%   en ambos idiomas
+\begin{abstract}
+\lipsum[1-4]
+\end{abstract}
+
+\begin{dedicatoria}
+My biggest enemy is me ever since day one. \\
+- Stefani Germanotta.
+\end{dedicatoria}
+
+\begin{thanks}
+\lipsum[1-2]
+\end{thanks}
+
+\tableofcontents
+% \listoftables % opcional
+% \listoffigures % opcional
+
+\mainmatter
+
+\input{chapters/intro}
+\input{chapters/framework}
+\input{chapters/continuation}
+\input{chapters/shraman}
+\input{chapters/spirals}
+\input{chapters/conclu}
+
+% ver https://www.overleaf.com/learn/latex/Glossaries
+% \input{glosario.tex} % opcional
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{bibliografia}
+
+% opcional ...
+\begin{appendices}
+\input{anexoA.tex}
+\end{appendices}
+\end{document}
