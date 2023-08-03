@@ -2,18 +2,21 @@
 
 \bibitem{doedel1981auto}
 Eusebius~J Doedel.
-\newblock Auto: A program for the automatic bifurcation analysis of autonomous systems.
+\newblock Auto: A program for the automatic bifurcation analysis of autonomous
+  systems.
 \newblock {\em Congr. Numer}, 30(265-284):25--93, 1981.
 
 \bibitem{doedel2007lecture}
 Eusebius~J Doedel.
 \newblock Lecture notes on numerical analysis of nonlinear equations.
-\newblock {\em Numerical Continuation Methods for Dynamical Systems: Path following and boundary value problems}, pages 1--49, 2007.
+\newblock {\em Numerical Continuation Methods for Dynamical Systems: Path
+  following and boundary value problems}, pages 1--49, 2007.
 
 \bibitem{keller1968numerical}
 H.B. Keller.
 \newblock {\em Numerical Methods for Two-point Boundary-value Problems}.
-\newblock Blaisdell book in numerical analysis and computer science. Blaisdell, 1968.
+\newblock Blaisdell book in numerical analysis and computer science. Blaisdell,
+  1968.
 
 \bibitem{keller1977numerical}
 Herbert~B Keller.
@@ -27,7 +30,8 @@ Luigi~A Lugiato and Ren{\'e} Lefever.
 
 \bibitem{Uecker2017pde2path}
 Hannes Uecker.
-\newblock Hopf bifurcation and time periodic orbits with pde2path – algorithms and applications.
+\newblock Hopf bifurcation and time periodic orbits with pde2path –
+  algorithms and applications.
 \newblock {\em Communications in Computational Physics}, 25, 08 2017.
 
 \end{thebibliography}

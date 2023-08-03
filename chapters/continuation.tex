@@ -37,8 +37,8 @@ The simplest way to perform numerical continuation is to fix the value of the pa
 the equation (or system of equations) by means of Newton's method. Then, one can increase the 
 parameter by a small step $\eta = \eta_0 + \Delta \eta$ and find the new solution using 
 the previous solution $\bm{u_0}$ as initial guess for Newton's method. Finally, we repeat the process
-until the whole solution branch has been computed. This method is usually called either {\em Natural Continuation}
-or {\em Parameter Continuation} \cite{doedel2007lecture}
+until the whole solution branch has been computed. This method is usually called {\em Natural Parameter Continuation}
+\cite{doedel2007lecture}.
 
 \begin{exmp}
     In order to illustrate the method lets consider a simple
@@ -127,7 +127,7 @@ to normalize it. Therefore, another equation must be added,
     \label{eq:pre_nc_tangent_normalization}
 \end{equation}
 
-Then, we can fix $\frac{d \eta}{ds} = 1$ and solve Eq.~(\ref{eq:pre_nc_tangent}) for $\frac{d}{ds}\bm{x}$. Since
+Then, we can fix $\frac{d \eta}{ds} = 1$ and solve Eq.~(\ref{eq:pre_nc_tangent}) for $\frac{d}{ds}\bm{u}$. Since
 it constitutes a system of linear equations, it can be solved using a standard linear solver. Finally, 
 the tangent vector must be normalized in order to satisfy Eq.~(\ref{eq:pre_nc_tangent_normalization})
 and its sign chosen such that it has the same orientation as the previously
@@ -158,7 +158,7 @@ And its corresponding Jacobian $\tilde{\matr{J}}$ reads
 \end{equation}
 
 Notice that the last row of the extended Jacobian $\tilde{\matr{J}}$ corresponds
-exactly to the tangent $\bm{\tau}$. 
+exactly to the tangent vector $\bm{\tau}$. 
 
 We can summarize the pseudo-arclength continuation algorithm in the following steps.
 
@@ -206,11 +206,11 @@ We can summarize the pseudo-arclength continuation algorithm in the following st
     \end{equation*}
 
     The tangent vector $\bm{\tau} = (\tau_u, \tau_{\eta})$ can be computed by solving Eq.~(\ref{eq:pre_nc_tangent}).
-    We start by fixing $\frac{d}{ds}\eta = 1$, then $\frac{d}{ds}x$ can be obtained directly,
+    We start by fixing $\frac{d}{ds}\eta = 1$, then $\frac{d}{ds}u$ can be obtained directly,
     \begin{equation*}
         \dfrac{du}{ds} = -\dfrac{F_{\eta}}{J} = -\dfrac{1}{\varepsilon - 3u^2}.
     \end{equation*}
-    Finally, we normalize $\tau$ to obtain the tangent vector.
+    Finally, we normalize $\bm{\tau}$ to obtain the tangent vector.
 
     \begin{figure}[h]
         \centering
@@ -257,7 +257,7 @@ parameter value $\eta_0$ close to the desired solution. The idea is to find the 
 that minimizes the difference $D$ between the desired solution $\bm{a}$ and the reference solution
 $\bm{a}_0$. We can define the difference as follows,
 \begin{equation}
-    D(\theta) = \int_0^1 dx' 
+    D(\theta) = \int_0^L dx' 
         \left|\left| \bm{a}(x' + \theta) - \bm{a}_0(x') \right|\right|^2    
 \end{equation}
 
@@ -266,7 +266,7 @@ then integrate by parts. Thus, we arrive at the following condition which is sim
 implement.
 
 \begin{equation}
-    p(\bm{a}, \bm{a}_0) = \int_0^1 dx' \bm{a}(x') \cdot \left. \frac{d\bm{a}_0}{dx}\right\vert_{x'} = 0.
+    p(\bm{a}, \bm{a}_0) = \int_0^L dx' \bm{a}(x') \cdot \left. \frac{d\bm{a}_0}{dx}\right\vert_{x'} = 0.
 \end{equation}
 
 We can re-define the extended vector function for which we want to find 
@@ -299,6 +299,9 @@ Therefore, the corresponding Jacobian of the extended function reads
     \end{pmatrix}.
 \end{equation}
 
+Note that the last row corresponds, once again, exactly to the tangent vector
+$\tau = (d\bm{u}/ds, dT/ds, d\eta/ds) = (\dot{\bm{u}}, \dot{T}, \dot{\eta})$.
+
 
 \section{Continuation for periodic orbits}
 
@@ -330,12 +333,17 @@ method needs to be modified accordingly. It now reads,
         + (T - T_0) \dfrac{dT}{ds} + (\eta - \eta_0) \dfrac{d\eta}{ds} - \Delta s = 0 
 \end{equation}
 
-Note that we have introduced the period $T$ as another unknown which will be solved
-through Newton's method along with $\bm{u}$ and $\eta$, i.e. we want to solve
-for $\bm{y}(t) \equiv (\bm{u}(t), T, \eta)$. Additionally, one can add weights to the
+Additionally, one can add weights to the
 previous equation in order to tune the search direction in Newton's method "horizontally"
 (taking larger steps in the parameter $\eta$) or "vertically" (smaller steps in $\eta$),
-see \cite{Uecker2017pde2path} for a more detailed discussion. Finally, we can re-define the
+see \cite{Uecker2017pde2path} for a more detailed discussion.
+
+Note that we have introduced the period $T$ as another unknown which will be solved
+through Newton's method along with $\bm{u}$ and $\eta$, i.e. we want to solve
+for $\bm{y}(t) \equiv (\bm{u}(t), T, \eta)$. Moreover, as in the previous section, a phase condition
+$p(\bm{u}, \bm{u_0}) = 0$ must be satisfied in order to deal with the translational invariance (in time) and
+guarantee the uniqueness of the solution.
+Finally, we can re-define the
 extended vector function for which we want to find the root of in the following manner,
 
 \begin{equation}
@@ -346,9 +354,6 @@ extended vector function for which we want to find the root of in the following 
     \end{pmatrix}
 \end{equation}
 
-Note that we have introduced the phase condition $p(\bm{u}, \bm{u}_0) = 0$. As stated in the previous
-section, this additional equation will deal with the translational (in time) symmetry and ensure the uniqueness
-of the solution.
 
 In order to solve this system of equations subject to periodic boundary conditions, many strategies can be followed. Namely, orthogonal collocation methods
 (implemented in AUTO \cite{doedel1981auto}), multiple shooting methods \cite{keller1968numerical}, and last but not least, finite difference methods
@@ -372,8 +377,5 @@ reads
         T \matr{J}(\bm{u}, \eta) - \matr{\nabla}_t & \bm{F}(\bm{u}, \eta) &  T\bm{F}_\eta(\bm{u}, \eta)\\
         p_{\bm{u}}(\bm{u}_0) & 0 & 0 \\
         \dot{\bm{u}} & \dot{T} & \dot{\eta} \\
-    \end{pmatrix}
+    \end{pmatrix}.
 \end{equation}
-
-Note that the last row corresponds, once again, exactly to the tangent vector
-$\tau = (d\bm{u}/ds, dT/ds, d\eta/ds) = (\dot{\bm{u}}, \dot{T}, \dot{\eta})$.
