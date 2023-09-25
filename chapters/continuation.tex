@@ -2,12 +2,18 @@
 
 As stated in the previous section, we will be interested in following the solution
 branches as it experiences several bifurcations. Since an analytical treatment is not
-usually available for the problems studied in this work, we must resort to numerical methods.
+usually available for the problems studied in this work, we must resort / are required to numerical methods.
 Namely, we will implement and develop a numerical continuation algorithm. These type of methods
 aim to solve a nonlinear equation or, more generally, a system of nonlinear equations in order to find the desired steady states of a dynamical system 
 as parameters are changed. This task corresponds to finding the roots (zeros) of a vector function $\bm{F}$, as in Eq.~(\ref{eq:pre_nc_zeros}). 
 We will assume we previously know a solution $\bm{u}_0$ for a certain parameter $\eta_0$, obtained
 for example through numerical simulation.
+
+
+[It will be assumed ...
++ formalidad uso de that, we will assume that we previously know a solution...
+Borrar recall newton's method...]
+% This method  corresponds 
 
 \begin{equation}
     0 = \bm{F}(\bm{u}, \eta)
@@ -16,12 +22,11 @@ for example through numerical simulation.
 
 Although there are several methods for finding the roots of a vector function,
 in this thesis we will only use Newton's method because of its fast (quadratic) convergence
-and simplicity. Recall that Newton's method is an iterative method that given an initial
+and simplicity. This method corresponds to an iterative algorithm that given an initial
 guess $\bm{u_0}$ will perform successive iterations until a certain accuracy or tolerance
 is reached. Each iteration is computed using Eqs~(\ref{eq:pre_nc_newt1}-\ref{eq:pre_nc_newt2}),
 where $\matr{J}(\bm{u}_i, \eta)$ is the Jacobian of $\bm{F}$. Moreover, since we have access
-to the Jacobian in Newton's method, we can track the stability of the solution and detect bifurcation
-points by tracking changes in the sign of the determinant of the Jacobian.
+to the Jacobian in Newton's method, the stability of the solution can be tracked and bifurcation points can be detected by tracking changes in the sign of the determinant of the Jacobian.
 
 \begin{align}
     \matr{J}(\bm{u}_i, \eta) \Delta \bm{u}_{i+1} &= - \bm{F}(\bm{u}_i, \eta) 
@@ -36,26 +41,25 @@ points by tracking changes in the sign of the determinant of the Jacobian.
 The simplest way to perform numerical continuation is to fix the value of the parameter, in this case $\eta$, and solve
 the equation (or system of equations) by means of Newton's method. Then, one can increase the 
 parameter by a small step $\eta = \eta_0 + \Delta \eta$ and find the new solution using 
-the previous solution $\bm{u_0}$ as initial guess for Newton's method. Finally, we repeat the process
+the previous solution $\bm{u_0}$ as initial guess for Newton's method. Finally, is repeated the process
 until the whole solution branch has been computed. This method is usually called {\em Natural Parameter Continuation}
 \cite{doedel2007lecture}.
 
 \begin{exmp}
     In order to illustrate the method lets consider a simple
     example: finding the homogeneous solutions to the Swift-Hohenberg equation. More specifically,
-    we will look for both the stable and unstable equilibria of Eq.~(\ref{eq:pre_nc_she}).    
+   the stable and unstable equilibria of Eq.~(\ref{eq:pre_nc_she}) will be computed.     
     \begin{equation}
         \dot{u} = \eta + \varepsilon u - u^3
         \label{eq:pre_nc_she}
     \end{equation}
 
-    This is the same
-    as to find the roots of a cubic polynomial: $F(u, \eta) = \eta + \varepsilon u - u^3 = 0$. The derivative
+    This task corresponds to finding the roots of a cubic polynomial: $F(u, \eta) = \eta + \varepsilon u - u^3 = 0$. The derivative
     can be determined easily: $J(u, \eta) = \varepsilon - 3u^2$. 
     %Moreover, when $\eta=0$, $F$ admits three distinct real solutions when
     % $\varepsilon$ is positive and one real and two complex conjugate roots when $\varepsilon$ is negative. 
 
-    We will look at the case where $\varepsilon = 0.1$, for which the system is bistable. Indeed, if we start the algorithm
+    Fig ... illustrates / shows the case where $\varepsilon = 0.1$, for which the system is bistable. Indeed, if we start the algorithm
     at $\eta=-0.02$ taking as initial guess $u_0 = -0.4$ and perform a forward sweep (slowly increasing $\eta$), and then
     repeat the process backwards we obtain Fig.~(\ref{fig:pre_nc_she}).
 
@@ -69,12 +73,12 @@ until the whole solution branch has been computed. This method is usually called
     \end{figure}
 \end{exmp}
 
-Note that the natural continuation succeeded at finding the lower and upper branch of the solution
+Note that the natural continuation succeeds at finding the lower and upper branch of the solution
 in this example.
 However, it could not follow the branch past the fold (or saddle-node) bifurcation. The
 only way to access the middle branch using this algorithm would be to use an adequate initial guess close
 to the middle branch. 
-Although in this case, it is not difficult to find one, for a higher-dimensional system where the
+Although in this case, it is not difficult to find this guess, for a higher-dimensional system where the
 bifurcation scenario is more complicated, this quickly becomes impractical. To overcome this limitation,
 one can implement a more robust continuation scheme: the {\em pseudo-arclength continuation}.
 
@@ -96,6 +100,7 @@ Then the {\em pseudo-arclength} algorithm \cite{keller1977numerical} consists es
     $$(\bm{y} - \bm{y_0}) \cdot \bm{\tau}_0 = \Delta s$$
 \end{enumerate}
 
+A new object is introduced-...
 We have introduced in these steps a new object: the tangent $\bm{\tau}$ of the solution curve $\bm{y}(s)$,
 which is defined as,
 \begin{equation}
@@ -120,22 +125,27 @@ above equation, and obtain the following,
 
 Additionally, in order to uniquely define the tangent vector, we must
 impose a restriction on its length, the most reasonable choice being
-to normalize it. Therefore, another equation must be added,
+to normalize it. Consequently, another equation must be added,
 
 \begin{equation}
     \left|\left|\dfrac{d\bm{u}}{ds}\right|\right|^2 + \left(\dfrac{d\eta}{ds}\right)^2 = 1
     \label{eq:pre_nc_tangent_normalization}
 \end{equation}
 
+[averiguar such that]
+
+
 Then, we can fix $\frac{d \eta}{ds} = 1$ and solve Eq.~(\ref{eq:pre_nc_tangent}) for $\frac{d}{ds}\bm{u}$. Since
 it constitutes a system of linear equations, it can be solved using a standard linear solver. Finally, 
 the tangent vector must be normalized in order to satisfy Eq.~(\ref{eq:pre_nc_tangent_normalization})
 and its sign chosen such that it has the same orientation as the previously
 known tangent $\bm{\tau}_0$ i.e. such that $\bm{\tau} \cdot \bm{\tau}_0 > 0$. In the very first step
-of the continuation method we do not know a previous tangent, in that case we can choose the
+of the continuation method, the previous tangent is unkown. In that case, we can choose the
 orientation of $\bm{\tau}$ such that its last element (corresponding to  $\frac{d \eta}{ds}$) is
 positive if we want to compute the solution branch for increasing values of the parameter $\eta$ or negative
 for decreasing values of the parameter.
+
+is positive to move forward or negative to move backward.
 
 It is convenient to define an extended vector function $\tilde{ \bm{F} }$ that incorporates $\bm{F}$
 and the corrector step in the following manner,
@@ -160,7 +170,7 @@ And its corresponding Jacobian $\tilde{\matr{J}}$ reads
 Notice that the last row of the extended Jacobian $\tilde{\matr{J}}$ corresponds
 exactly to the tangent vector $\bm{\tau}$. 
 
-We can summarize the pseudo-arclength continuation algorithm in the following steps.
+The pseudo-arclength continuation algorithm can be summarized in the following steps.
 
 \begin{enumerate}
     \item Compute a first point in the solution branch $\bm{y}_0 = (\bm{u}_0, \eta_0)$,
@@ -186,7 +196,7 @@ We can summarize the pseudo-arclength continuation algorithm in the following st
 % \begin{defn}[ver \cite{KAR00}] Definición definitiva $$\frac{d}{dx}\int_a^xf(y)dy=f(x).$$\end{defn}
 
 \begin{exmp}
-    Let's revisit the previous example and implement the pseudo-arclength continuation
+    In order to illustrate, it is useful to revisit the previous example and implement the pseudo-arclength continuation
     to the same problem. The extended function $\tilde{\bm{F}}(u, {\eta})$ can be written
     in the following form,
     \begin{equation}
