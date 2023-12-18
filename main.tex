@@ -36,6 +36,7 @@
 \usepackage{svg}
 \usepackage{graphicx}
 \usepackage{sidecap}
+\usepackage{pdfpages}
 
 \begin{document}
 
@@ -75,7 +76,11 @@ My biggest enemy is me ever since day one. \\
 \input{chapters/intro}
 \input{chapters/framework}
 \input{chapters/continuation}
-\input{chapters/shraman}
+
+\input{chapters/isolas.tex}
+\includepdf[pages={-}]{chapters/isolas.pdf}
+
+%\input{chapters/shraman}
 \input{chapters/spirals}
 \input{chapters/conclu}
 
