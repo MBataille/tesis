@@ -26,7 +26,8 @@ and simplicity. This method corresponds to an iterative algorithm that given an 
 guess $\bm{u_0}$ will perform successive iterations until a certain accuracy or tolerance
 is reached. Each iteration is computed using Eqs~(\ref{eq:pre_nc_newt1}-\ref{eq:pre_nc_newt2}),
 where $\matr{J}(\bm{u}_i, \eta)$ is the Jacobian of $\bm{F}$. Moreover, since we have access
-to the Jacobian in Newton's method, the stability of the solution can be tracked and bifurcation points can be detected by tracking changes in the sign of the determinant of the Jacobian.
+to the Jacobian in Newton's method, the stability of the solution can be tracked and bifurcation points 
+can be detected by tracking changes in the sign of the determinant of the Jacobian.
 
 \begin{align}
     \matr{J}(\bm{u}_i, \eta) \Delta \bm{u}_{i+1} &= - \bm{F}(\bm{u}_i, \eta) 
@@ -41,7 +42,7 @@ to the Jacobian in Newton's method, the stability of the solution can be tracked
 The simplest way to perform numerical continuation is to fix the value of the parameter, in this case $\eta$, and solve
 the equation (or system of equations) by means of Newton's method. Then, one can increase the 
 parameter by a small step $\eta = \eta_0 + \Delta \eta$ and find the new solution using 
-the previous solution $\bm{u_0}$ as initial guess for Newton's method. Finally, is repeated the process
+the previous solution $\bm{u_0}$ as initial guess for Newton's method. Finally, the process is repeated
 until the whole solution branch has been computed. This method is usually called {\em Natural Parameter Continuation}
 \cite{doedel2007lecture}.
 
