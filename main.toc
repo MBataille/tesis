@@ -1,4 +1,4 @@
-\babel@toc {english}{}\relax 
+\babel@toc {english}{}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Preliminary concepts}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Dynamical System}{3}{section.2.1}%
@@ -9,7 +9,7 @@
 \contentsline {section}{\numberline {2.3}Localized Structure.}{3}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Chimera states}{3}{section.2.4}%
 \contentsline {chapter}{\numberline {3}Numerical Continuation}{4}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Natural parameter continuation}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.1}Natural parameter continuation}{4}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Pseudo-arclength continuation}{6}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Continuation of traveling states}{8}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Continuation for periodic orbits}{10}{section.3.4}%
@@ -17,9 +17,9 @@
 \contentsline {section}{\numberline {4.1}Lugiato-Lefever equation.}{12}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Raman effect.}{13}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Isolas and traveling solitons.}{13}{section.4.3}%
-\contentsline {section}{\numberline {4.4}A reduced model.}{15}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Oscillatory bound states.}{15}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Moving spiral wave chimeras}{17}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Conclusions}{20}{chapter.6}%
-\contentsline {chapter}{\numberline {}Bibliography}{22}{chapter*.13}%
-\contentsline {chapter}{Appendix \numberline {A}Anexo}{23}{Appendix.a.A}%
+\contentsline {section}{\numberline {4.4}A reduced model.}{14}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Oscillatory bound states.}{14}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Moving spiral wave chimeras}{18}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusions}{21}{chapter.6}%
+\contentsline {chapter}{\numberline {}Bibliography}{23}{chapter*.13}%
+\contentsline {chapter}{Appendix \numberline {A}Anexo}{24}{Appendix.a.A}%

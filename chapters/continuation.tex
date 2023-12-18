@@ -1,19 +1,11 @@
 \chapter{Numerical Continuation}
 
 As stated in the previous section, we will be interested in following the solution
-branches as it experiences several bifurcations. Since an analytical treatment is not
-usually available for the problems studied in this work, we must resort / are required to numerical methods.
-Namely, we will implement and develop a numerical continuation algorithm. These type of methods
-aim to solve a nonlinear equation or, more generally, a system of nonlinear equations in order to find the desired steady states of a dynamical system 
+branches as they experience several bifurcations. Since an analytical treatment is not
+usually available for the problems studied in this work, we must resort to numerical methods.
+Namely, we will implement and develop a numerical continuation algorithm. This type of method
+aims to solve a nonlinear equation or, more generally, a system of nonlinear equations to find the desired steady states of a dynamical system 
 as parameters are changed. This task corresponds to finding the roots (zeros) of a vector function $\bm{F}$, as in Eq.~(\ref{eq:pre_nc_zeros}). 
-We will assume we previously know a solution $\bm{u}_0$ for a certain parameter $\eta_0$, obtained
-for example through numerical simulation.
-
-
-[It will be assumed ...
-+ formalidad uso de that, we will assume that we previously know a solution...
-Borrar recall newton's method...]
-% This method  corresponds 
 
 \begin{equation}
     0 = \bm{F}(\bm{u}, \eta)
@@ -23,10 +15,12 @@ Borrar recall newton's method...]
 Although there are several methods for finding the roots of a vector function,
 in this thesis we will only use Newton's method because of its fast (quadratic) convergence
 and simplicity. This method corresponds to an iterative algorithm that given an initial
-guess $\bm{u_0}$ will perform successive iterations until a certain accuracy or tolerance
-is reached. Each iteration is computed using Eqs~(\ref{eq:pre_nc_newt1}-\ref{eq:pre_nc_newt2}),
-where $\matr{J}(\bm{u}_i, \eta)$ is the Jacobian of $\bm{F}$. Moreover, since we have access
-to the Jacobian in Newton's method, the stability of the solution can be tracked and bifurcation points can be detected by tracking changes in the sign of the determinant of the Jacobian.
+guess $\bm{u_0}$, will perform successive iterations until a certain accuracy or tolerance
+is reached. Typically, an adequate initial guess can be obtained through direct numerical simulations.
+Each iteration is computed using Eqs~(\ref{eq:pre_nc_newt1}-\ref{eq:pre_nc_newt2}),
+where $\matr{J}(\bm{u}_i, \eta)$ is the Jacobian of $\bm{F}$. Moreover, since the Jacobian is known
+in each step of Newton's algorithm, the stability of the solution and the bifurcation points can be
+directly determined by analyzing the sign of the determinant of the Jacobian.
 
 \begin{align}
     \matr{J}(\bm{u}_i, \eta) \Delta \bm{u}_{i+1} &= - \bm{F}(\bm{u}_i, \eta) 
@@ -39,14 +33,14 @@ to the Jacobian in Newton's method, the stability of the solution can be tracked
 \section{Natural parameter continuation}
 
 The simplest way to perform numerical continuation is to fix the value of the parameter, in this case $\eta$, and solve
-the equation (or system of equations) by means of Newton's method. Then, one can increase the 
+the equation (or system of equations) through Newton's method. Then, one can increase the 
 parameter by a small step $\eta = \eta_0 + \Delta \eta$ and find the new solution using 
-the previous solution $\bm{u_0}$ as initial guess for Newton's method. Finally, is repeated the process
+the previous solution $\bm{u_0}$ as the initial guess for Newton's method. Finally, the process is repeated
 until the whole solution branch has been computed. This method is usually called {\em Natural Parameter Continuation}
 \cite{doedel2007lecture}.
 
 \begin{exmp}
-    In order to illustrate the method lets consider a simple
+    To illustrate the method, consider a simple [imperfect pitchfork]
     example: finding the homogeneous solutions to the Swift-Hohenberg equation. More specifically,
    the stable and unstable equilibria of Eq.~(\ref{eq:pre_nc_she}) will be computed.     
     \begin{equation}
@@ -59,9 +53,9 @@ until the whole solution branch has been computed. This method is usually called
     %Moreover, when $\eta=0$, $F$ admits three distinct real solutions when
     % $\varepsilon$ is positive and one real and two complex conjugate roots when $\varepsilon$ is negative. 
 
-    Fig ... illustrates / shows the case where $\varepsilon = 0.1$, for which the system is bistable. Indeed, if we start the algorithm
-    at $\eta=-0.02$ taking as initial guess $u_0 = -0.4$ and perform a forward sweep (slowly increasing $\eta$), and then
-    repeat the process backwards we obtain Fig.~(\ref{fig:pre_nc_she}).
+    Fig~(\ref{fig:pre_nc_she}) illustrates the case where $\varepsilon = 0.1$, in which the system is bistable. Indeed, if the algorithm is started
+    at $\eta=-0.02$ taking as initial guess $u_0 = -0.4$ and a forward sweep is performed (slowly increasing $\eta$), and then
+    repeat the process backward we obtain Fig.~(\ref{fig:pre_nc_she}).
 
     \begin{figure}[h]
         \centering
@@ -73,41 +67,39 @@ until the whole solution branch has been computed. This method is usually called
     \end{figure}
 \end{exmp}
 
-Note that the natural continuation succeeds at finding the lower and upper branch of the solution
+Note that the natural continuation succeeds at finding the lower and upper branches of the solution
 in this example.
-However, it could not follow the branch past the fold (or saddle-node) bifurcation. The
-only way to access the middle branch using this algorithm would be to use an adequate initial guess close
+However, it could not follow the branch past the fold (or saddle-node) bifurcation. The only way to access the middle branch using this algorithm would be to use an adequate initial guess close
 to the middle branch. 
-Although in this case, it is not difficult to find this guess, for a higher-dimensional system where the
-bifurcation scenario is more complicated, this quickly becomes impractical. To overcome this limitation,
-one can implement a more robust continuation scheme: the {\em pseudo-arclength continuation}.
+Although in this case, it is not difficult to find a suitable initial guess that will converge to the middle branch, 
+for a higher-dimensional system where the bifurcation scenario is more complicated, this quickly becomes impractical. 
+To overcome this limitation, one can implement a more robust continuation scheme: the {\em pseudo-arclength continuation}.
 
 \section{Pseudo-arclength continuation}
 
 
-As shown in the previous example, $\eta$ is not necessarily the good parameter to describe the curve, as it
+As shown in the previous example, $\eta$ is not necessarily a good parameter to describe the curve, as it
 does not allow us to follow the branch through a fold point. A different approach can be taken where we
 parametrize the solution branch by a different parameter: $s$, which is somewhat similar
-to the arc-length. Therefore, our goal is to obtain a set of points 
+to the arclength. Therefore, our goal is to obtain a set of points 
 $\bm{y}(s) = (\bm{u}(s), \eta(s))$.
 Then the {\em pseudo-arclength} algorithm \cite{keller1977numerical} consists essentially of two steps that ensure that the branch is followed through folds.
 \begin{enumerate}
     \item {\em Predictor step.} Extrapolate a distance $\Delta s$ along the tangent $\bm{\tau}_0$ from a previously known point $(\bm{u}_0, \eta_0)$ in the $(\bm{u},\eta)$ space, to
-    obtain the predicted point (the point used as initial guess). 
+    obtain the predicted point (the point used as an initial guess). 
     $$\bm{y} = \bm{y}_0 + \bm{\tau}_0 \Delta s$$
     \item {\em Corrector step.} Force the solution to stay in the plane perpendicular to the tangent. 
     Or, equivalently, that the solution projected onto the tangent has length $\Delta s$. 
     $$(\bm{y} - \bm{y_0}) \cdot \bm{\tau}_0 = \Delta s$$
 \end{enumerate}
 
-A new object is introduced-...
-We have introduced in these steps a new object: the tangent $\bm{\tau}$ of the solution curve $\bm{y}(s)$,
+In these steps, a new object is introduced: the tangent $\bm{\tau}$ of the solution curve $\bm{y}(s)$,
 which is defined as,
 \begin{equation}
     \bm{\tau} = \frac{d}{ds}\bm{y} = \left(\frac{d\bm{u}}{ds}, \frac{d\eta}{ds}\right)
 \end{equation}
 
-An additional step must therefore be carried out in order to implement this method: computing 
+An additional step must therefore be carried out: computing 
 the tangent vector. To do this, it is convenient to revisit Eq.~(\ref{eq:pre_nc_zeros}) and write out
 the dependence on the new parameter $s$ explicitly.
 \begin{equation}
@@ -123,7 +115,7 @@ above equation, and obtain the following,
     \label{eq:pre_nc_tangent}
 \end{equation}
 
-Additionally, in order to uniquely define the tangent vector, we must
+Subsequently, in order to uniquely define the tangent vector, we must
 impose a restriction on its length, the most reasonable choice being
 to normalize it. Consequently, another equation must be added,
 
@@ -136,16 +128,13 @@ to normalize it. Consequently, another equation must be added,
 
 
 Then, we can fix $\frac{d \eta}{ds} = 1$ and solve Eq.~(\ref{eq:pre_nc_tangent}) for $\frac{d}{ds}\bm{u}$. Since
-it constitutes a system of linear equations, it can be solved using a standard linear solver. Finally, 
-the tangent vector must be normalized in order to satisfy Eq.~(\ref{eq:pre_nc_tangent_normalization})
-and its sign chosen such that it has the same orientation as the previously
+it constitutes a system of linear equations, it can be solved using a standard linear solver. The tangent vector 
+must be normalized to satisfy Eq.~(\ref{eq:pre_nc_tangent_normalization})
+and its sign must be chosen such that it has the same orientation as the previously
 known tangent $\bm{\tau}_0$ i.e. such that $\bm{\tau} \cdot \bm{\tau}_0 > 0$. In the very first step
-of the continuation method, the previous tangent is unkown. In that case, we can choose the
+of the continuation method, the previous tangent is unknown. In that case, one can choose the
 orientation of $\bm{\tau}$ such that its last element (corresponding to  $\frac{d \eta}{ds}$) is
-positive if we want to compute the solution branch for increasing values of the parameter $\eta$ or negative
-for decreasing values of the parameter.
-
-is positive to move forward or negative to move backward.
+positive to move forward (increasing the parameter) or negative to move backward (decreasing the parameter).
 
 It is convenient to define an extended vector function $\tilde{ \bm{F} }$ that incorporates $\bm{F}$
 and the corrector step in the following manner,
@@ -170,7 +159,7 @@ And its corresponding Jacobian $\tilde{\matr{J}}$ reads
 Notice that the last row of the extended Jacobian $\tilde{\matr{J}}$ corresponds
 exactly to the tangent vector $\bm{\tau}$. 
 
-The pseudo-arclength continuation algorithm can be summarized in the following steps.
+Finally, the pseudo-arclength continuation algorithm can be summarized in the following steps.
 
 \begin{enumerate}
     \item Compute a first point in the solution branch $\bm{y}_0 = (\bm{u}_0, \eta_0)$,
@@ -185,18 +174,18 @@ The pseudo-arclength continuation algorithm can be summarized in the following s
     \item Using $\bm{y}_0 + \bm{\tau}_0 \Delta s$ as initial guess in Newton's method, solve
     Eq.~(\ref{eq:pre_nc_palc_system}) to find the next point in the solution branch $\bm{y}_{i+1}$.
 
-    \item Again, solve Eq.~(\ref{eq:pre_nc_tangent}) and find the tangent at that point $\bm{\tau}_{i+1}$.
+    \item Solve Eq.~(\ref{eq:pre_nc_tangent}) and find the tangent at that point $\bm{\tau}_{i+1}$.
     Choose the orientation such that it matches the previous tangent, $\bm{\tau}_{i+1} \cdot \bm{\tau}_i > 0$.
 
     \item Repeat steps 3-4 until the whole solution branch has been computed. One could also
-    track changes in the sign of the determinant of $\matr{J}$ in order to estimate the location
+    track changes in the sign of the determinant of $\matr{J}$ to estimate the location
     of bifurcation points.
 \end{enumerate}
 
 % \begin{defn}[ver \cite{KAR00}] Definición definitiva $$\frac{d}{dx}\int_a^xf(y)dy=f(x).$$\end{defn}
 
 \begin{exmp}
-    In order to illustrate, it is useful to revisit the previous example and implement the pseudo-arclength continuation
+    To illustrate the algorithm, it is useful to revisit the previous example and implement the pseudo-arclength continuation
     to the same problem. The extended function $\tilde{\bm{F}}(u, {\eta})$ can be written
     in the following form,
     \begin{equation}
@@ -216,6 +205,7 @@ The pseudo-arclength continuation algorithm can be summarized in the following s
     \end{equation*}
 
     The tangent vector $\bm{\tau} = (\tau_u, \tau_{\eta})$ can be computed by solving Eq.~(\ref{eq:pre_nc_tangent}).
+    
     We start by fixing $\frac{d}{ds}\eta = 1$, then $\frac{d}{ds}u$ can be obtained directly,
     \begin{equation*}
         \dfrac{du}{ds} = -\dfrac{F_{\eta}}{J} = -\dfrac{1}{\varepsilon - 3u^2}.
@@ -227,7 +217,7 @@ The pseudo-arclength continuation algorithm can be summarized in the following s
         \includegraphics[width=0.7\textwidth]{scripts/figures/palc_she.png}
         \caption[short]{Solution of Eq.~(\ref{eq:pre_nc_palc_she}) as a function of the parameter $\eta$ obtained
         through the pseudo-arclength continuation (orange dots) compared to the exact solution (blue curve).}
-        \label{fig:pre_nc_she}
+        \label{fig:pre_nc_she_palc}
         %\includesvg[width=0.5\textwidth]{scripts/figures/natural_continuation_she.svg}
     \end{figure}
 
@@ -236,7 +226,7 @@ The pseudo-arclength continuation algorithm can be summarized in the following s
 \section{Continuation of traveling states}
 
 In the particular case of following moving solutions with constant speed $c$, which is
-the core of this work, some difficulties arise. The first and most evident one, is that
+the core of this work, some difficulties arise. The first and most evident one is that
 the desired solution is not steady anymore. This can be solved rather easily by
 changing to the co-moving frame of reference, i.e. by inserting the traveling wave
 ansatz $\bm{u}(x, t) = \bm{a}(x - ct)$, where $a$ is the solution profile in the co-moving frame,
@@ -253,11 +243,11 @@ each step, the speed will have to be determined by the
 algorithm. The solution to this problem is to add the speed
 as another unknown, that is to say, we will now be interested in solving for 
 $\bm{y} = (\bm{a}, c, \eta)$. This leads to the third and final problem, which is that due
-to the additional unknown, we are a missing an additional equation that will guarantee
+to the additional unknown, we are missing an additional equation that will guarantee
 a unique solution to the linearized system. Moreover, we will be solving these systems considering periodic
-boundary conditions meaning that a translational invariance will appear. In order to
+boundary conditions meaning that a translational invariance will appear. To
 deal with the translational symmetry and guarantee a unique solution, a {\em phase condition}
-or {\em pinning condition} must be established. Indeed, if we find a solution
+or {\em pinning condition} must be established. Indeed, if one finds a solution
 $\bm{a}(x)$, then $\tilde{\bm{a}}_{\theta}(x) = \bm{a}(x  + \theta)$ is also
 a solution for every $\theta$. 
 
@@ -265,21 +255,21 @@ The most widely used condition is the
 {\em integral phase condition} \cite{doedel1981auto} which takes a reference solution $\bm{a}_0$ for a certain
 parameter value $\eta_0$ close to the desired solution. The idea is to find the phase
 that minimizes the difference $D$ between the desired solution $\bm{a}$ and the reference solution
-$\bm{a}_0$. We can define the difference as follows,
+$\bm{a}_0$. The difference can be defined as follows,
 \begin{equation}
     D(\theta) = \int_0^L dx' 
         \left|\left| \bm{a}(x' + \theta) - \bm{a}_0(x') \right|\right|^2    
 \end{equation}
 
-In order to minimize the difference, we differentiate the above equation, set it equal to zero and 
-then integrate by parts. Thus, we arrive at the following condition which is simpler to
+To minimize the difference, the above equation must be differentiated, set equal to zero and 
+then integrated by parts. After carrying out these steps, the following condition is established which is simpler to
 implement.
 
 \begin{equation}
     p(\bm{a}, \bm{a}_0) = \int_0^L dx' \bm{a}(x') \cdot \left. \frac{d\bm{a}_0}{dx}\right\vert_{x'} = 0.
 \end{equation}
 
-We can re-define the extended vector function for which we want to find 
+It is more convenient to re-define the extended vector function for which we want to find 
 the root of in the following manner,
 
 \begin{equation}
@@ -315,10 +305,9 @@ $\tau = (d\bm{u}/ds, dT/ds, d\eta/ds) = (\dot{\bm{u}}, \dot{T}, \dot{\eta})$.
 
 \section{Continuation for periodic orbits}
 
-If we know wish to follow periodic solutions with the continuation method we
-must first derive a new set of equations to be solved. Mainly, periodic solutions
-are not steady solutions of the differential equation, however they satisfy
-the following boundary-value problem.
+In order to follow periodic solutions with the continuation method, a new set of equations
+must be satisfied. Mainly, periodic solutions are not steady solutions of the differential equation.
+However, they satisfy the following boundary-value problem.
 
 \begin{align}
     \dfrac{d\bm{u}}{dt} &= \bm{F}(\bm{u}, \eta) \\
@@ -343,18 +332,16 @@ method needs to be modified accordingly. It now reads,
         + (T - T_0) \dfrac{dT}{ds} + (\eta - \eta_0) \dfrac{d\eta}{ds} - \Delta s = 0 
 \end{equation}
 
-Additionally, one can add weights to the
-previous equation in order to tune the search direction in Newton's method "horizontally"
+Additionally, one can add weights to the previous equation in order to tune the search direction in Newton's method "horizontally"
 (taking larger steps in the parameter $\eta$) or "vertically" (smaller steps in $\eta$),
 see \cite{Uecker2017pde2path} for a more detailed discussion.
 
-Note that we have introduced the period $T$ as another unknown which will be solved
-through Newton's method along with $\bm{u}$ and $\eta$, i.e. we want to solve
+Note that the period $T$ has been introduced as another unknown which will be determined
+through Newton's method along with $\bm{u}$ and $\eta$, i.e. the method will solve
 for $\bm{y}(t) \equiv (\bm{u}(t), T, \eta)$. Moreover, as in the previous section, a phase condition
 $p(\bm{u}, \bm{u_0}) = 0$ must be satisfied in order to deal with the translational invariance (in time) and
-guarantee the uniqueness of the solution.
-Finally, we can re-define the
-extended vector function for which we want to find the root of in the following manner,
+guarantee the uniqueness of the solution. Finally, one can re-define the
+extended vector function for which one wants to find the root in the following manner,
 
 \begin{equation}
     \bm{H(\bm{y})} = \begin{pmatrix}
@@ -366,10 +353,9 @@ extended vector function for which we want to find the root of in the following 
 
 
 In order to solve this system of equations subject to periodic boundary conditions, many strategies can be followed. Namely, orthogonal collocation methods
-(implemented in AUTO \cite{doedel1981auto}), multiple shooting methods \cite{keller1968numerical}, and last but not least, finite difference methods
+(implemented in AUTO \cite{doedel1981auto}), multiple shooting methods \cite{keller1968numerical}, and finite difference methods
 (implemented in pde2path \cite{Uecker2017pde2path}). Although the latter has the least accuracy it is by far the 
-simplest to implement. In the finite difference method, a possible approximation to the
-first equation in the above system is the trapezoidal rule (used for instance in the Crank-Nicolson
+simplest to implement. In the finite difference method, a possible approximation to the first equation in the above system is the trapezoidal rule (used for instance in the Crank-Nicolson
 scheme for simulating PDEs),
 
 \begin{equation}
@@ -378,7 +364,7 @@ scheme for simulating PDEs),
 \end{equation}
 
 Note that the derivative of $\bm{u}$ with respect to $t$ can be written as a product
-of a matrix $\matr{\nabla}_t$ and the time-discretized vector $\bm{u}_i$ $(1 \leq i \leq n_t)$, i.e.
+of a matrix $\matr{\nabla}_t$ and the time-discretized vector $\bm{u}_i$ $(1 \leq i \leq n_t)$. In other words,
 it can be written as $\matr{\nabla}_t\bm{u}$, in which case the Jacobian $\matr{J_H}$ of $\bm{H}$
 reads
 
