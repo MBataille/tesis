@@ -34,9 +34,19 @@ In the following section, we shall describe the simplest bifurcations a system c
 
 Qualitative changes of equilibria as parameters are varied.
 
+Ideas:
+\begin{enumerate}
+    \item transcritical logistic model (population growth, see Murray for ref.)
+    \item saddle-node bistability duffing
+    \item saddle-node on circle pp 96, 111 Strogatz
+    \item saddle-node for genes pp 249
+    \item magnetism Landau Pitchfork
+    \item Hopf, van der pol, bici
+\end{enumerate}
+
 \subsection{Saddle-Node bifurcation}
 
-Saddle-node or fold bifurcations provide the simplest mechanism for which a pair of stable and
+{\em Saddle-node} or {\em fold} bifurcations provide the simplest mechanism for which a pair of stable and
 unstable equilibria can be created (or destroyed) as the control parameter is changed. They arise
 in a wide variety of systems [insert ref]. The corresponding normal form is the following.
 
@@ -47,8 +57,22 @@ in a wide variety of systems [insert ref]. The corresponding normal form is the 
 For $\eta > 0$, the system presents two equilibria $u_{\pm} = \pm\sqrt{\eta}$, where $u_+$ is
 stable and $u_-$ unstable. An interesting case occurs when $\eta = 0$, at which point $u = 0$ is
 half-stable (stable for positive perturbations and unstable for negative perturbations). Lastly,
-for $\eta < 0$ there are no equilibria. In short, as the bifurcation parameter $\eta$ is decreased (increased)
+for $\eta < 0$ there are no equilibria. Figure~(\ref{fig:pre_bifs_sn}) provides a visual representation
+oh the previous analysis.
+
+In short, as the bifurcation parameter $\eta$ is decreased (increased)
 starting from positive (negative) values, the two equilibria attract (repel) each other and suddenly annihilate (appear).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{imagenes/framework/bif_sn_f.pdf}
+    \caption{Prototipical scenario for a saddle-node bifurcation. (a) Phase diagram
+    showing both equilibria for different values of $\eta$. Black (white) circles represent
+    stable (unstable) fixed points. (b) Bifurcation diagram showing
+    the creation of a stable-unstable pair of fixed points. Solid (dashed) line represents
+    stable (unstable) branch.}
+    \label{fig:pre_bifs_sn}
+\end{figure}
 
 [insert example]
 

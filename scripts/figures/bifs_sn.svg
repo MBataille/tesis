@@ -7,6 +7,9 @@
    id="svg409"
    sodipodi:docname="bifs_sn.svg"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   inkscape:export-filename="bifs_sn.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,9 +28,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
      showgrid="false"
-     inkscape:zoom="2.5043402"
-     inkscape:cx="277.91751"
-     inkscape:cy="222.01456"
+     inkscape:zoom="1.7708359"
+     inkscape:cx="189.45854"
+     inkscape:cy="185.22326"
      inkscape:window-width="2560"
      inkscape:window-height="1334"
      inkscape:window-x="-11"
@@ -318,6 +321,20 @@
   </defs>
   <g
      inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="bg"
+     style="display:none">
+    <rect
+       style="fill:#ffffff;stroke:none;stroke-width:1.27491;stroke-linejoin:round"
+       id="rect767"
+       width="542.68158"
+       height="420.14056"
+       x="9.5999861"
+       y="37.270535"
+       transform="matrix(0.78042941,0,0,0.78831627,-5.3723964,-17.524224)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
      id="layer1"
      inkscape:label="Layer 1">
     <path
@@ -477,7 +494,7 @@
        x="548.64752"
        y="434.84506"
        id="text1366"
-       transform="matrix(0.75,0,0,0.75,-25.458944,-1.3435886)"><tspan
+       transform="matrix(0.75,0,0,0.75,-23.685015,-1.3435886)"><tspan
          sodipodi:role="line"
          id="tspan1364"
          x="548.64752"
@@ -488,7 +505,7 @@
        x="74.670364"
        y="434.04645"
        id="text1370"
-       transform="matrix(0.75,0,0,0.75,-25.322147,-0.74462775)"><tspan
+       transform="matrix(0.75,0,0,0.75,-27.096076,-0.74462775)"><tspan
          sodipodi:role="line"
          id="tspan1368"
          x="74.670364"
@@ -1037,13 +1054,6 @@
       </g>
     </g>
     <circle
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.33333;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       id="path7042-1"
-       cx="280.513"
-       cy="205.44333"
-       r="5.789948"
-       transform="matrix(0.75,0,0,0.75,2.4292832,-1.2727903)" />
-    <circle
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.33333;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
        id="path7042-1-6"
        cx="280.513"
@@ -1085,18 +1095,40 @@
        cy="205.44333"
        r="5.789948"
        transform="matrix(0.75,0,0,0.75,-167.07894,-1.5062524)" />
+    <text
+       xml:space="preserve"
+       style="font-size:21.3333px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';opacity:0.8;fill:#000000;stroke-width:1.33333;stroke-linecap:butt;stroke-linejoin:round"
+       x="98.828423"
+       y="86.050606"
+       id="text4525"
+       transform="matrix(0.75,0,0,0.75,-32.205695,-1.9838146)"><tspan
+         sodipodi:role="line"
+         id="tspan4523"
+         x="98.828423"
+         y="86.050606"
+         style="font-size:21.3333px">(a)</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Layer 2">
-    <circle
-       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.33333;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       id="path7042"
-       cx="280.513"
-       cy="205.44333"
-       r="5.789948"
-       transform="matrix(0.75,0,0,0.75,2.4105657,-1.2727903)"
-       clip-path="url(#clipPath7278)" />
+    <g
+       id="g2665">
+      <circle
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.33333;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="path7042-1"
+         cx="280.513"
+         cy="205.44333"
+         r="5.789948"
+         transform="matrix(0.75,0,0,0.75,2.4292832,-1.2727903)" />
+      <circle
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.33333;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         id="path7042"
+         cx="280.513"
+         cy="205.44333"
+         r="5.789948"
+         transform="matrix(0.75,0,0,0.75,2.4105657,-1.2727903)"
+         clip-path="url(#clipPath7278)" />
+    </g>
   </g>
 </svg>
