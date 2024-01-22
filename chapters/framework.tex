@@ -1,10 +1,54 @@
 \chapter{Preliminary concepts}
 
-\section{Dynamical System}
+\section{Dynamical Systems}
+
+[introducir bien el tema]. 
+
+The general form for a dynamical system will be the following.
+
+\begin{equation}
+    \dfrac{d\bm{u}}{dt} = \bm{f}(\bm{u}, \eta), \qquad \bm{f} : \mathbb{R}^N \times \mathbb{R}^{n_\eta} \to \mathbb{R}^N
+    \label{eq:def_ds}
+\end{equation}
+
+Here, $\bm{u}$ represents the state vector of the system, it might correspond to the
+concentrations of different chemicals, the population of certain species or the amplitude
+of an electric field. The temporal evolution of the state of system is thus determined by 
+the vector function $\bm{f}$. This function may in turn depend on one or several control
+parameters $\eta$ relevant to the modeled experiment such as
+[Agregar parametros]
+
+In this thesis, we will consider different dynamical systems represented by Eq.~(\ref{eq:def_ds}) where the function
+$\bm{f}$ will be {\em nonlinear}. Although one might argue that, at a fundamental level, the physical laws
+that describe the evolution of a system (Schrödinger equation for example) are linear, when one looks at meso- or macroscopical
+systems, nonlinear terms naturally arise due to the coarse-graining of the microscopical degrees of freedom [ref Karadr].
+
+
+In the case of a nonlinear dynamical system, it becomes extremely difficult, and often impossible, to find
+general explicit solutions of Eq.~(\ref{eq:def_ds}). But it turns out that in most cases an in depth
+description of the model can be provided by studying only the steady states ($\bm{f}(\bm{u}, \eta) = 0$) and their qualitative changes as parameters 
+are varied. In other words, the problem can be reduced as to find the {\em equilibria} and {\em bifurcations} of the system.
+In the following section, we shall describe the simplest bifurcations a system can experience.
 
 \section{Bifurcations}
 
+Qualitative changes of equilibria as parameters are varied.
+
 \subsection{Saddle-Node bifurcation}
+
+Saddle-node or fold bifurcations provide the simplest mechanism for which a pair of stable and
+unstable equilibria can be created (or destroyed) as the control parameter is changed. They arise
+in a wide variety of systems [insert ref]. The corresponding normal form is the following.
+
+\begin{equation}
+    \dfrac{du}{dt} = \eta - u^2
+\end{equation}
+
+For $\eta > 0$, the system presents two equilibria $u_{\pm} = \pm\sqrt{\eta}$, where $u_+$ is
+stable and $u_-$ unstable. An interesting case occurs when $\eta = 0$, at which point $u = 0$ is
+half-stable (stable for positive perturbations and unstable for negative perturbations). Lastly,
+for $\eta < 0$ there are no equilibria. In short, as the bifurcation parameter $\eta$ is decreased (increased)
+starting from positive (negative) values, the two equilibria attract (repel) each other and suddenly annihilate (appear).
 
 [insert example]
 
@@ -16,7 +60,12 @@
 
 [insert example]
 
-\section{Localized Structure.}
+\section{Localized Structures}
 \label{sec:fra_LS}
 
 \section{Chimera states}
+\subsubsection{Phase oscillators}
+
+\subsection{Kuramoto model}
+
+\subsection{Spiral wave chimeras}
