@@ -46,19 +46,22 @@ Ideas:
 
 \subsection{Saddle-Node bifurcation}
 
-{\em Saddle-node} or {\em fold} bifurcations provide the simplest mechanism for which a pair of stable and
-unstable equilibria can be created (or destroyed) as the control parameter is changed. They arise
-in a wide variety of systems [insert ref]. The corresponding normal form is the following.
+{\em Saddle-node} or {\em fold} bifurcations provide the simplest mechanism 
+for which a pair of stable and unstable equilibria can be created (or destroyed) 
+as the control parameter is changed. Although they arise in a huge variety of systems 
+[insert ref], close to the bifurcation point the dynamics can always be reduced to
+the following minimal or {\em normal form}.
 
 \begin{equation}
     \dfrac{du}{dt} = \eta - u^2
 \end{equation}
 
-For $\eta > 0$, the system presents two equilibria $u_{\pm} = \pm\sqrt{\eta}$, where $u_+$ is
+Following the notation of Eq.~(\ref{eq:def_ds}), u represents the state variable
+and $\eta$ the control parameter. For $\eta > 0$, the system presents two equilibria $u_{\pm} = \pm\sqrt{\eta}$, where $u_+$ is
 stable and $u_-$ unstable. An interesting case occurs when $\eta = 0$, at which point $u = 0$ is
 half-stable (stable for positive perturbations and unstable for negative perturbations). Lastly,
 for $\eta < 0$ there are no equilibria. Figure~(\ref{fig:pre_bifs_sn}) provides a visual representation
-oh the previous analysis.
+of the previous analysis.
 
 In short, as the bifurcation parameter $\eta$ is decreased (increased)
 starting from positive (negative) values, the two equilibria attract (repel) each other and suddenly annihilate (appear).
@@ -74,7 +77,48 @@ starting from positive (negative) values, the two equilibria attract (repel) eac
     \label{fig:pre_bifs_sn}
 \end{figure}
 
-[insert example]
+\begin{exmp}
+    For centuries, the mystery of synchronization between fireflies has
+    captivated many people. Although many open questions remain on this topic [ref],
+    we will aim to shed {\em light} on this topic only with the knowledge of saddle-node bifurcations
+    and a simple model proposed by Ermentrout and ...[ref]. 
+    
+    Consider the problem
+    of a firefly flashing under the presence of a periodically flashing light.
+    We will model the flashing of the firefly with an angular variable $\theta$
+    such that $\theta = 0$ represents the firefly's flash. The firefly has its 
+    own inherent frequency $\omega$, i.e. in the absence of stimuli 
+    $\dot{\theta} = \omega$. On the other hand, the periodic stimulus will be
+    represented by a phase $\phi$ that satisfies $\dot{\phi} = \Omega$, where 
+    $\Omega$ is of course the stimuli period. In order to synchronize with the
+    stimuli, the firefly will either want to speed up if it is lagging behind
+    or slow down if it is going too fast. The simplest non-linear model that
+    fulfills these assumptions is the following,
+    \begin{align*}
+        \dot{\phi} &= \Omega \\
+        \dot{\theta} &= \omega + A \sin(\phi -  \theta)
+    \end{align*}
+
+    Subtracting both equations and defining $\varphi = \dot{\phi} - \dot{\theta}$
+    yields 
+
+    \begin{equation*}
+        \dot{\varphi} = \Omega - \omega - A \sin \varphi
+    \end{equation*}
+
+    which can be adimensionalized by rescaling $t \to At$ and introducing
+    the non dimensional parameter $\eta = (\Omega - \omega)/A$,
+
+    \begin{equation}
+        \dot{\varphi} = \eta - \sin \varphi
+    \end{equation}
+
+    For $\eta = 0$ where the forcing and intrinsic frequencies are the same, there
+    is a stable fixed point at $\varphi = 0$ and an unstable fixed point at $\varphi = \pi$.
+    As $\eta$ increases, both equilibria approach each other until they collide at $\eta=1$
+    and then disappear for values of $\eta > 1$. 
+
+\end{exmp}
 
 \subsection{Pitchfork bifurcation}
 
