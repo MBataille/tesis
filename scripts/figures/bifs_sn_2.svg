@@ -7,6 +7,9 @@
    id="svg1619"
    sodipodi:docname="bifs_sn_2.svg"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   inkscape:export-filename="bifs_sn_2.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -26,8 +29,8 @@
      inkscape:document-units="pt"
      showgrid="false"
      inkscape:zoom="1.770836"
-     inkscape:cx="232.37613"
-     inkscape:cy="238.30553"
+     inkscape:cx="240.8467"
+     inkscape:cy="267.10549"
      inkscape:window-width="2560"
      inkscape:window-height="1334"
      inkscape:window-x="-11"
@@ -227,6 +230,18 @@
        x="20.894087"
        y="33.882301"
        transform="matrix(0.77706186,0,0,0.73505976,3.2463263,6.8591414)" />
+    <text
+       xml:space="preserve"
+       style="font-size:21.3333px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';opacity:0.8;fill:#000000;stroke-width:1.33333;stroke-linejoin:round"
+       x="98.828423"
+       y="86.050606"
+       id="text4525"
+       transform="matrix(0.75,0,0,0.75,-5.4633073,-1.3733516)"><tspan
+         sodipodi:role="line"
+         id="tspan4523"
+         x="98.828423"
+         y="86.050606"
+         style="font-size:21.3333px">(b)</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"

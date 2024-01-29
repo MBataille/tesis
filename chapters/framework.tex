@@ -34,15 +34,12 @@ In the following section, we shall describe the simplest bifurcations a system c
 
 Qualitative changes of equilibria as parameters are varied.
 
-Ideas:
-\begin{enumerate}
-    \item transcritical logistic model (population growth, see Murray for ref.)
-    \item saddle-node bistability duffing
-    \item saddle-node on circle pp 96, 111 Strogatz
-    \item saddle-node for genes pp 249
-    \item magnetism Landau Pitchfork
-    \item Hopf, van der pol, bici
-\end{enumerate}
+% Ideas:
+% \begin{enumerate}
+%     \item saddle-node for genes pp 249
+%     \item magnetism Landau Pitchfork
+%     \item Hopf, van der pol, bici
+% \end{enumerate}
 
 \subsection{Saddle-Node bifurcation}
 
@@ -54,6 +51,7 @@ the following minimal or {\em normal form}.
 
 \begin{equation}
     \dfrac{du}{dt} = \eta - u^2
+    \label{eq:pre_bif_sn}
 \end{equation}
 
 Following the notation of Eq.~(\ref{eq:def_ds}), u represents the state variable
@@ -69,8 +67,9 @@ starting from positive (negative) values, the two equilibria attract (repel) eac
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{imagenes/framework/bif_sn_f.pdf}
-    \caption{Prototipical scenario for a saddle-node bifurcation. (a) Phase diagram
-    showing both equilibria for different values of $\eta$. Black (white) circles represent
+    \caption{Prototipical scenario for a saddle-node bifurcation. (a) Phase space
+    showing both stable and unstable fixed points for different values of $\eta$. 
+    Black (white) circles represent
     stable (unstable) fixed points. (b) Bifurcation diagram showing
     the creation of a stable-unstable pair of fixed points. Solid (dashed) line represents
     stable (unstable) branch.}
@@ -107,23 +106,41 @@ starting from positive (negative) values, the two equilibria attract (repel) eac
     \end{equation*}
 
     which can be adimensionalized by rescaling $t \to At$ and introducing
-    the non dimensional parameter $\eta = (\Omega - \omega)/A$,
+    the non dimensional parameter $\mu = (\Omega - \omega)/A$,
 
     \begin{equation}
-        \dot{\varphi} = \eta - \sin \varphi
+        \dot{\varphi} = \mu - \sin \varphi
+        \label{eq:pre_bif_sn_exmp}
     \end{equation}
 
-    For $\eta = 0$ where the forcing and intrinsic frequencies are the same, there
+    For $\mu = 0$ where the forcing and intrinsic frequencies are the same, there
     is a stable fixed point at $\varphi = 0$ and an unstable fixed point at $\varphi = \pi$.
-    As $\eta$ increases, both equilibria approach each other until they collide at $\eta=1$
-    and then disappear for values of $\eta > 1$. 
+    As $\mu$ increases, both equilibria approach each other until they collide for $\mu=\mu_c=1$
+    at $\varphi = \pi/2$
+    and then disappear for $\mu > 1$. We can clearly recognize that the pair of fixed
+    points appear (or disappear) through a saddle-node bifurcation.
+    
+    Moreover, close to the bifurcation point where $\mu_c = 1$ and $\varphi_c = \pi/2$,
+    we can do a Taylor expansion: $\mu = 1 + \eta$ and $\varphi = \pi/2 + u$ 
+    where $\eta, u \ll 1$. Using the identity $\sin \varphi = \sin (\pi/2 + u) = \cos u$
+    and inserting the previous ansatz into Eq.~(\ref{eq:pre_bif_sn_exmp}) yields
+    the following
+    \begin{align*}
+        \dot{\varphi} = \dot{u} &= 1 + \eta - \cos u \\ 
+        &\approx 1 + \eta - (1 - \dfrac12 u^2) \\
+        &= \eta - \dfrac12 u^2
+    \end{align*}
+
+    Which after an adequate rescaling corresponds exactly with the saddle-node
+    normal form.
+    
 
 \end{exmp}
 
 \subsection{Pitchfork bifurcation}
 
-[insert example]
-
+A {\em pitchfork} bifurcation constitutes the simplest symmetry breaking bifurcation.
+More specifically, the.
 \subsection{Hopf bifurcation}
 
 [insert example]
