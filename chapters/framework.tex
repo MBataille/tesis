@@ -13,7 +13,7 @@ The general form for a dynamical system will be the following.
 
 Here, $\bm{u}$ represents the state vector of the system, it might correspond to the
 concentrations of different chemicals, the population of certain species or the amplitude
-of an electric field. The temporal evolution of the state of system is thus determined by 
+of an electric field. The temporal evolution of the state of the system is thus determined by 
 the vector function $\bm{f}$. This function may in turn depend on one or several control
 parameters $\eta$ relevant to the modeled experiment such as
 [Agregar parametros]
@@ -131,7 +131,7 @@ starting from positive (negative) values, the two equilibria attract (repel) eac
         &= \eta - \dfrac12 u^2
     \end{align*}
 
-    Which after an adequate rescaling corresponds exactly with the saddle-node
+    Which after adequate rescaling corresponds exactly with the saddle-node
     normal form.
     
 
@@ -139,8 +139,16 @@ starting from positive (negative) values, the two equilibria attract (repel) eac
 
 \subsection{Pitchfork bifurcation}
 
-A {\em pitchfork} bifurcation constitutes the simplest symmetry breaking bifurcation.
-More specifically, the.
+A {\em pitchfork} bifurcation constitutes the simplest symmetry-breaking bifurcation.
+Its normal form is given by
+
+\begin{equation}
+    \dfrac{du}{dt} = \varepsilon u - u ^ 3
+\end{equation}
+
+Note that the above formula corresponds to a {\em supercritical} bifurcation, the emerging branches from the
+bifurcation point are stable. On the contrary, in the {\em subcritical} case, the cubic
+term should be positive and a negative quintic term should be added to ensure the solution is bounded.
 \subsection{Hopf bifurcation}
 
 [insert example]
