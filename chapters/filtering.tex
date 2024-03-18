@@ -1,1 +1,22 @@
 \chapter{Dissipative Soliton Combs with Spectral Filtering. (IEEE Journal of Quantum Electronics, XX(X), X-XX)}
+
+In the previous chapter, we studied the formation of dissipative solitons in optical
+resonators when a non-local
+term due to Raman scattering is incorporated into the Lugiato-Lefever equation. The
+integral form of this additional term poses several analytical and numerical difficulties.
+For instance, in the case of the numerical continuation, where one needs to solve a very
+large system of equations, the addition of the integral term transforms the extremely sparse
+system into a dense system, increasing the computational cost in terms of both memory and time
+by several orders of magnitude.
+
+An alternative approach to deal with the integral form of a non-local operator is to represent
+it by an infinite Taylor series, also referred to as a gradient expansion. Moreover, 
+assuming that the kernel function is sufficiently localized, one can safely truncate the expansion
+and keep only the first few relevant terms. This way, the integral operator can be
+effectively replaced by a few differential operators with coefficients that depend on
+the kernel function.
+
+In this chapter, we will follow the alternative approach stated above to investigate
+the formation of soliton and patterns in a fiber ring resonator with a spectral filter. 
+We will consider the case of a large-bandwidth filter (or equivalently, localized temporal filter)
+which allows for a truncated gradient expansion.
