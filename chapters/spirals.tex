@@ -1,15 +1,14 @@
 \chapter{Moving spiral wave chimeras (Physical Review E, 104(2), L022203)}
 
-So far, we have devoted our investigation to drifting one-dimensional localized states in a non-local optical system. 
-In those two cases, the motion itself was to be expected since a reflection
+So far, this investigation has focused on drifting one-dimensional localized states in a non-local optical system. 
+In these two cases, the motion itself was to be expected since a reflection
 symmetry-breaking term was present. Nevertheless, such a term is not always
-necessary for there to be moving localized states. Indeed, in this chapter, 
-we shall show that the motion can arise spontaneously
+necessary to set localized states in motion. Indeed, this chapter exposes that motion can arise spontaneously
 in an isotropic system of coupled phase oscillators.
 
 In section~\ref{sec:phase_oscillators}, we emphasized the importance
 and universality of phase oscillators, as they offer a comprehensive
-description of various self-sustained oscillators while disregarding amplitude 
+description of self-sustained oscillators while neglecting the amplitude 
 dynamics. Such oscillators can be found all around us,
 in flashing fireflies, circadian cycles, lasers, electrical equipment, and even within us
 like neurons in the brain and pacemaker cells in the heart. Although the dynamics
@@ -17,15 +16,16 @@ of an individual oscillator is already a challenging problem, as evidenced
 by the Nobel Prize awarded to Hodgkin and Huxley for their neuron model
 \cite{hodgkin1952quantitative},
 exploring the dynamics of a population of coupled phase oscillators
-introduces greater complexity and richness. One fundamental question that
+introduces even greater complexity and richness. One fundamental question that
 arises in these interacting oscillators systems is whether they will synchronize, 
 and if so, to what degree?
 
 While numerous authors made tremendous advances on this topic, one of the
-most notable is probably Kuramoto who provided a simple yet powerful model 
+most notable is Kuramoto who provided a simple yet powerful model 
 for describing coupled oscillators several decades ago \cite{kuramoto1975model}. Even today, the Kuramoto
 model and its modifications remain a very active research field [citas].
-Remarkably, when Kuramoto and Battogtokh extended the model considering non-local coupling instead, he observed an incongruous state
+Remarkably, when Kuramoto and Battogtokh extended the model considering non-local coupling instead
+of the original global coupling, he observed an incongruous state
 of partial synchrony where coherent (synchronized) and incoherent (desynchronized) domains coexisted \cite{kuramoto2002coexistence}.
 One would expect that coupling identical oscillators would only yield a completely coherent
 state, yet they showed that the symmetry could be spontaneously broken and the system
@@ -34,40 +34,68 @@ would self-organize into two different and coexisting domains, what we now call 
 Even more surprisingly, two-dimensional simulations of the Kuramoto-Battogtokh model
 revealed a planar chimera state in the form of a spiral wave. This spiral wave chimera
 presented an incoherent core at the tip of the spiral where oscillators were desynchronized
-while the remaining oscillators located in the spiral arms were synchronized. Similar
-patterns were already observed in reaction-diffusion systems except for one significant
+while the remaining oscillators located in the spiral arms were synchronized. Similar spiral
+patterns had already been observed in reaction-diffusion systems except for one significant
 difference, the phase singularity located in the tip of the spiral was now replaced by
-an incoherent core. Since then they have been repeatedly observed in a variety of systems
-both numerically [citas] and experimentally [citas]. 
+an incoherent core. Since then, spiral chimeras have been repeatedly observed both numerically [citas] and experimentally [citas]
+in a variety of systems. 
+
+In this chapter, we investigate the dynamics of a bound state of two counter-rotating spiral wave chimeras in a two-dimensional array of coupled non-identical
+phase oscillators. Although we consider a symmetric and isotropic coupling function,
+the top-hat function, we show that a spontaneous symmetry breaking takes place
+and thus the spiral wave chimeras present a permanent motion. Consequently,
+we observe the formation of a crescent-shaped pattern in the incoherent core
+of the spirals oriented towards the direction of motion. To eliminate the
+finite-size noise, we study the
+continuum limit of infinitely many oscillators by numerically simulating the
+associated Ott-Antonsen equation. Moreover, we identify 3 different two-core spiral chimeras according to their motion, namely symmetric, asymmetric
+and meandering spirals, and determine their stability region.
+
+% Sacar we, occur, one would think, no but, so , also, 
+% pasado y presente perfecto.
+
+% 2d extension: spiral wave chimera. similar to spiral wave, experiments, relevance
+ 
+% in this chapter
+% importance of synchronization. 
+% synchronization: Huygens (history), Kuramoto (predictions, see section xx).
+% one could expect they synchronize but chimera state! kuramoto battogtokh,
+% experiments, etc. introduce spiral wave chimera
+
+% in this chapter...
+
+% Coupled oscillators, synchronization. Very important in many contexts, brain, heart,
+% power grid, etc.
+
+% Unexpectedly, a different state was also found: the chimera state. explain
+% They have been predicted and experimentally observed in a plethora of systems
+% [refs]. 
+
+% In the weak coupling limit, these populations of nonlinear oscillators can be accurately
+% described by a simple yet powerful model: the Kuramoto model. 
 
 
-2d extension: spiral wave chimera. similat to spiral wave, experiments, relevance
+% This second half will be devoted to the study of coupled phase oscillators. As
+% stated previously, in section~\ref{sec:phase_oscillators}, the dynamics of
+% a non-linear oscillator, in the limit of weak coupling, can be reduced
+% to a single cyclic variable: the phase. Therefore, an adequate and general model
+% for a population of coupled oscillators  
 
-in this chapter
-importance of synchronization. 
-synchronization: hugyens (history), kuramoto (predictions, see section xx).
-one could expect they synchronize but chimera state! kuramoto battogtokh,
-experiments, etc. introduce spiral wave chimera
-
-in this chapter...
-
-Coupled oscillators, synchronization. Very important in many contexts, brain, heart,
-power grid, etc.
-
-Unexpectedly, a different state was also found: the chimera state. explain
-They have been predicted and experimentally observed in a plethora of systems
-[refs]. 
-
-In the weak coupling limit, these populations of nonlinear oscillators can be accurately
-described by a simple yet powerful model: the Kuramoto model. 
-
-
-This second half will be devoted to the study of coupled phase oscillators. As
-stated previously, in section~\ref{sec:phase_oscillators}, the dynamics of
-a non-linear oscillator, in the limit of weak coupling, can be reduced
-to a single cyclic variable: the phase. Therefore, an adequate and general model
-for a population of coupled oscillators  
-
-[synchronization in the brain] \cite{erra2017neuralsynchronization}
+% [synchronization in the brain] \cite{erra2017neuralsynchronization}
 
 \includepdf[pages={-}]{chapters/movingspirals.pdf}
+
+\section{Perspectives}
+ 
+
+In this work, we have shown that even in a symmetric system, two-core
+spiral chimeras move in three different ways. Furthermore, we have
+identified the stability region of symmetric, asymmetric and meandering spirals.
+Nevertheless, a more in-depth numerical analysis is needed to find not only
+stable but also unstable states. This information will be fundamental to identifying
+the various bifurcations that lead to the emergence of two-core spiral chimeras
+from a homogeneous state, as well as the transition between symmetric and asymmetric
+spirals. Moreover, we have examined the effect of a top-hat coupling function
+which has numerical advantages but may not be experimentally relevant. Therefore,
+the extent to which these results extend to a more realistic coupling remains
+to be determined.
