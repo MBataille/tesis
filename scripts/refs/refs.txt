@@ -1,0 +1,5 @@
+[48] Firth W J, Columbo L and Scroggie A J 2007 Phys. Rev. Lett. 99 104503
+[49] Firth W J, Columbo L and Maggipinto T 2007 Chaos 17 037115
+[50] Barbay S, Hachair X, Elsass T, Sagnes I and Kuszelewicz R 2008 Phys. Rev. Lett. 101 253902
+[51] Thiele U, Archer A J, Robbins M J, Gomez H and Knobloch E 2013 Phys. Rev. E 87 042915
+[52] Pradenas B, Araya I, Clerc M G, Falcón C, Gandhi P and Knobloch E 2017 Phys. Rev. Fluids 2 064401
