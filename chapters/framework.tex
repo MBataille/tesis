@@ -4,7 +4,7 @@
 
 [introducir bien el tema]. 
 
-The general form for a dynamical system will be the following.
+The general form for a dynamical system is the following.
 
 \begin{equation}
     \dfrac{d\bm{u}}{dt} = \bm{f}(\bm{u}, \eta), \qquad \bm{f} : \mathbb{R}^N \times \mathbb{R}^{n_\eta} \to \mathbb{R}^N
@@ -14,21 +14,20 @@ The general form for a dynamical system will be the following.
 Here, $\bm{u}$ represents the state vector of the system, it might correspond to the
 concentrations of different chemicals, the population of certain species or the amplitude
 of an electric field. The temporal evolution of the state of the system is thus determined by 
-the vector function $\bm{f}$. This function may in turn depend on one or several control
-parameters $\eta$ relevant to the modeled experiment such as
-[Agregar parametros]
+the vector function $\bm{f}$. This function may, in turn, depend on one or more control
+parameters $\eta$ relevant to the modeled experiment (i.e. driving frequency, pumping power, etc).
 
-In this thesis, we will consider different dynamical systems represented by Eq.~(\ref{eq:def_ds}) where the function
-$\bm{f}$ will be {\em nonlinear}. Although one might argue that, at a fundamental level, the physical laws
-that describe the evolution of a system (Schrödinger equation for example) are linear, when one looks at meso- or macroscopical
+In this thesis, different dynamical systems in the form of Eq.~(\ref{eq:def_ds}) with a {\em nonlinear} function
+$\bm{f}$ will be considered. Although it might be argued that, at a fundamental level, the physical laws
+that describe the evolution of a system are linear (such as the Schrödinger equation), when one looks at meso- or macroscopical
 systems, nonlinear terms naturally arise due to the coarse-graining of the microscopical degrees of freedom [ref Karadr].
 
 
 In the case of a nonlinear dynamical system, it becomes extremely difficult, and often impossible, to find
-general explicit solutions of Eq.~(\ref{eq:def_ds}). But it turns out that in most cases an in depth
+general explicit solutions of Eq.~(\ref{eq:def_ds}). But it turns out that in most cases, an in-depth
 description of the model can be provided by studying only the steady states ($\bm{f}(\bm{u}, \eta) = 0$) and their qualitative changes as parameters 
-are varied. In other words, the problem can be reduced as to find the {\em equilibria} and {\em bifurcations} of the system.
-In the following section, we shall describe the simplest bifurcations a system can experience.
+are varied. In other words, the problem can be reduced to finding the {\em equilibria} and {\em bifurcations} of the system.
+In the following section, the elementary bifurcations a system can experience will be described.
 
 \section{Bifurcations}
 
@@ -143,12 +142,24 @@ A {\em pitchfork} bifurcation constitutes the simplest symmetry-breaking bifurca
 Its normal form is given by
 
 \begin{equation}
-    \dfrac{du}{dt} = \varepsilon u - u ^ 3
+    \dfrac{du}{dt} = \eta u - u ^ 3
 \end{equation}
 
 Note that the above formula corresponds to a {\em supercritical} bifurcation, the emerging branches from the
 bifurcation point are stable. On the contrary, in the {\em subcritical} case, the cubic
 term should be positive and a negative quintic term should be added to ensure the solution is bounded.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{imagenes/framework/bif_pitch_f.pdf}
+    \caption{Prototipical scenario for a pitchfork bifurcation. (a) Phase space
+    showing both stable and unstable fixed points for different values of $\eta$. 
+    Black (white) circles represent
+    stable (unstable) fixed points. (b) Bifurcation diagram showing
+    the creation of a stable-unstable pair of fixed points. Solid (dashed) line represents
+    stable (unstable) branch.}
+\end{figure}
+
 \subsection{Andronov-Hopf bifurcation}
 
 [insert example]
