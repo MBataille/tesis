@@ -138,27 +138,56 @@ starting from positive (negative) values, the two equilibria attract (repel) eac
 
 \subsection{Pitchfork bifurcation}
 
-A {\em pitchfork} bifurcation constitutes the simplest symmetry-breaking bifurcation.
-Its normal form is given by
+{\em Pitchfork} bifurcations typically arise in systems with symmetry and 
+provide a universal mechanism for symmetry-breaking [ref strogatz]. 
+A simple example is given by the statistical description of magnetization. 
+In the absence of an external field, the net magnetization $m$ 
+(below the critical temperature $T_c$) can either be positive or negative 
+with no preferred orientation, thus depending only on the initial condition. On the
+other hand, if the system is heated above the critical temperature, no net magnetization
+is observed, i.e. $m=0$. In the context of statistical mechanics, this second-order
+transition can be described by a mean-field approximation from Landau theory, where
+the free energy functional is expanded in (even) powers of $m$, thus arriving at exactly
+the pitchfork normal form, given by
 
 \begin{equation}
-    \dfrac{du}{dt} = \eta u - u ^ 3
+    \dfrac{du}{dt} = \eta u - u ^ 3.
+    \label{eq:pre_bif_pitchfork}
 \end{equation}
 
-Note that the above formula corresponds to a {\em supercritical} bifurcation, the emerging branches from the
-bifurcation point are stable. On the contrary, in the {\em subcritical} case, the cubic
-term should be positive and a negative quintic term should be added to ensure the solution is bounded.
+As shown in Fig.~(\ref{fig:pre_bif_pitchfork}), for $\eta < 0$ there is only one 
+equilibrium of Eq.~(\ref{eq:pre_bif_pitchfork}), it is stable and corresponds
+to the trivial solution $u=0$. For $\eta > 0$, the trivial solution loses stability
+and two stable symmetric branches $u_\pm = \pm \sqrt{\eta}$ emerge. 
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{imagenes/framework/bif_pitch_f.pdf}
     \caption{Prototipical scenario for a pitchfork bifurcation. (a) Phase space
     showing both stable and unstable fixed points for different values of $\eta$. 
-    Black (white) circles represent
-    stable (unstable) fixed points. (b) Bifurcation diagram showing
-    the creation of a stable-unstable pair of fixed points. Solid (dashed) line represents
-    stable (unstable) branch.}
+    Black circles represent stable fixed points, the grey circle represents a stable for $\eta < 0$
+    and unstable for $\eta > 0$ fixed point. (b) Bifurcation diagram showing
+    the emergence of two stable branches at the bifurcation, along with the change of
+    stability of the trivial solution. Solid (dashed) lines represents
+    stable (unstable) branches.}
+    \label{fig:pre_bif_pitchfork}
 \end{figure}
+
+Two types of pitchfork bifurcations should be distinguished: the {\em supercritical} 
+and the {\em subcritical} case. The former corresponds to Eq.~(\ref{eq:pre_bif_pitchfork})
+and was discussed above. In the latter, the two symmetric branches that emerge at the bifurcation
+point are unstable. In that case, the cubic term in the normal form has a positive sign and
+a negative quintic term is added to ensure the solution is bounded, and thus, that is physically
+relevant. The modified normal form corresponds to Eq.~(\ref{eq:pre_bif_pitchfork_subcritical}).
+
+\begin{equation}
+    \dfrac{du}{dt} = \eta u + u ^ 3 - u^5
+    \label{eq:pre_bif_pitchfork_subcritical}
+\end{equation}
+
+Moreover, due to the additional quintic term, the symmetric branches are stabilized 
+at a secondary bifurcation point $\eta_{sn}$ through a saddle-node bifurcation, as shown
+in Fig. .
 
 \subsection{Andronov-Hopf bifurcation}
 
