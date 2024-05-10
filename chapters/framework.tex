@@ -105,7 +105,7 @@ starting from positive (negative) values, the two equilibria attract (repel) eac
     \end{equation*}
 
     which can be adimensionalized by rescaling $t \to At$ and introducing
-    the non dimensional parameter $\mu = (\Omega - \omega)/A$,
+    the non-dimensional parameter $\mu = (\Omega - \omega)/A$,
 
     \begin{equation}
         \dot{\varphi} = \mu - \sin \varphi
@@ -116,7 +116,7 @@ starting from positive (negative) values, the two equilibria attract (repel) eac
     is a stable fixed point at $\varphi = 0$ and an unstable fixed point at $\varphi = \pi$.
     As $\mu$ increases, both equilibria approach each other until they collide for $\mu=\mu_c=1$
     at $\varphi = \pi/2$
-    and then disappear for $\mu > 1$. We can clearly recognize that the pair of fixed
+    and then disappear for $\mu > 1$. We can recognize that the pair of fixed
     points appear (or disappear) through a saddle-node bifurcation.
     
     Moreover, close to the bifurcation point where $\mu_c = 1$ and $\varphi_c = \pi/2$,
@@ -168,7 +168,7 @@ and two stable symmetric branches $u_\pm = \pm \sqrt{\eta}$ emerge.
     Black circles represent stable fixed points, the grey circle represents a stable for $\eta < 0$
     and unstable for $\eta > 0$ fixed point. (b) Bifurcation diagram showing
     the emergence of two stable branches at the bifurcation, along with the change of
-    stability of the trivial solution. Solid (dashed) lines represents
+    stability of the trivial solution. Solid (dashed) lines represent
     stable (unstable) branches.}
     \label{fig:pre_bif_pitchfork}
 \end{figure}
@@ -186,12 +186,28 @@ relevant. The modified normal form corresponds to Eq.~(\ref{eq:pre_bif_pitchfork
 \end{equation}
 
 Moreover, due to the additional quintic term, the symmetric branches are stabilized 
-at a secondary bifurcation point $\eta_{sn}$ through a saddle-node bifurcation, as shown
-in Fig. .
+at a secondary saddle-node bifurcation point $\eta_{sn}$, as shown
+in Fig.~(\ref{fig:pre_bif_subpitchfork}).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imagenes/framework/bif_pitch_subcritical.pdf}
+    \caption{Bifurcation diagram for the subcritical pitchfork. At the bifurcation point
+    for $\eta=0$, two symmetric unstable branches emerge and gain stability after undergoing
+    a saddle-node bifurcation for $\eta=\eta_{sn}$. The trivial solution is stable for $\eta < 0$
+    and unstable for $\eta > 0$.}
+    \label{fig:pre_bif_subpitchfork}
+\end{figure}
+
 
 \subsection{Andronov-Hopf bifurcation}
 
-[insert example]
+The two bifurcations discussed previously describe the emergence of steady states or fixed points. 
+More specifically, they belong to the class of {\em stationary} bifurcations. Here, a different class of bifurcations will be introduced,
+that of {\em dynamical} bifurcations, in which dynamical equilibria emerge. The simplest example is the Andronov-Hopf bifurcation
+that allows for the emergence of a limit cycle or, in other words, a periodic equilibrium. Since oscillations are impossible in 
+one dimension [ref strogatz], this bifurcation can only be present in systems of two or more dimensions. For simplicity, the following
+analysis will be restricted to only two dimensions. However, it can easily be extended to the more general case of arbitrary dimensions.
 
 \section{Localized Structures}
 \label{sec:fra_LS}
