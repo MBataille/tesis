@@ -187,7 +187,9 @@ relevant. The modified normal form corresponds to Eq.~(\ref{eq:pre_bif_pitchfork
 
 Moreover, due to the additional quintic term, the symmetric branches are stabilized 
 at a secondary saddle-node bifurcation point $\eta_{sn}$, as shown
-in Fig.~(\ref{fig:pre_bif_subpitchfork}).
+in Fig.~\ref{fig:pre_bif_subpitchfork}. It is important to mention that in subcritical
+bifurcation, a hysteresis loop is typically observed. 
+%For instance, Fig.~\ref{fig:pre_bif_subpitchfork}
 
 \begin{figure}[h]
     \centering
@@ -204,18 +206,45 @@ in Fig.~(\ref{fig:pre_bif_subpitchfork}).
 
 The two bifurcations discussed previously describe the emergence of steady states or fixed points. 
 More specifically, they belong to the class of {\em stationary} bifurcations. Here, a different class of bifurcations will be introduced,
-that of {\em dynamical} bifurcations, in which dynamical equilibria emerge. The simplest example is the Andronov-Hopf bifurcation
+that of {\em dynamical} bifurcations, in which dynamical equilibria emerge. The simplest scenario is the Andronov-Hopf bifurcation
 that allows for the emergence of a limit cycle or, in other words, a periodic equilibrium. [Insert examples]. Since oscillations are impossible in 
 one dimension [ref strogatz], this bifurcation can only be present in systems of two or more dimensions. For simplicity, the following
-analysis will be restricted to only two dimensions. However, it can easily be extended to the more general case of arbitrary dimensions.
-The normal form can be written in a compact form as a complex equation,
+analysis will be restricted to only two dimensions. Nevertheless, it can easily be extended to the more general case of arbitrary dimensions.
+The normal form can be written in a compact form as a complex equation: Eq.~(\ref{eq:hopf}). It is important to mention that
+the coefficient accompanying the cubic term could be complex, in that case, it corresponds to the Stuart-Landau equation which
+is the homogeneous part of the widely known Complex Ginzgurg-Landau equation.
 
 \begin{equation}
-    \dfrac{dA}{dt} = (\eta + i\omega)A - i|A|^2 A
+    \dfrac{dA}{dt} = (\eta + i\omega)A - |A|^2 A
+     \label{eq:hopf}
 \end{equation}
 
 It can directly be observed that there is a trivial fixed point at $A=0$. Linear stability analysis around this fixed point 
+reveals a pair of complex eigenvalues $\lambda_\pm = \eta \pm i\omega$. Therefore, for $\eta < 0$ the fixed point is a stable
+focus, whereas for $\eta > 0$, the eigenvalues have crossed the imaginary axis rendering the focus unstable. Moreover,
+by rewriting Eq.~(\ref{eq:hopf}) in polar coordinates $A = re^{i\theta}$, the emergence of a limit cycle is evidenced.
 
+\begin{align}
+    \dot{r} &= r(\eta - r^2)\\
+    \dot{\theta} &= \omega
+    \label{eq:hopf_polar}
+\end{align}
+
+From Eq.~(\ref{eq:hopf_polar}) it can be observed that a limit cycle emerges from $\eta=0$ with frequency $\omega$ and an 
+amplitude $|A| = r = \sqrt{\eta}$ that increases continuously from zero. 
+Similarly, as in the pitchfork bifurcation, this case corresponds to a supercritical
+bifurcation given that the limit cycle arising from the bifurcation is stable. Furthermore, the two results mentioned previously
+apply also in general, namely, that close to the
+bifurcation point $\eta_c$, the amplitude of the limit close grows with $\sqrt{\eta - \eta_c}$ and the frequency is approximately
+the imaginary part of the eigenvalue at the bifurcation point: $\operatorname{Im}{\lambda(\eta_c)}$.
+
+There is, however, a subcritical variation
+of the Andronov-Hopf bifurcation in which the emerging limit cycle is unstable and may stabilize at a secondary bifurcation point.
+The normal form is similar to the subcritical pitchfork since the cubic term has now the opposite sign and a quintic term is added to ensure the solution is bounded.
+
+\begin{equation}
+    \dfrac{dA}{dt} = (\eta + i\omega) A + |A|^2 A - |A|^4A
+\end{equation}
 
 \section{Localized Structures}
 \label{sec:fra_LS}
