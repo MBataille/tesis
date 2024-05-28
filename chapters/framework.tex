@@ -196,7 +196,7 @@ bifurcation, a hysteresis loop is typically observed.
     \includegraphics[width=0.6\textwidth]{imagenes/framework/bif_pitch_subcritical.pdf}
     \caption{Bifurcation diagram for the subcritical pitchfork. At the bifurcation point
     for $\eta=0$, two symmetric unstable branches emerge and gain stability after undergoing
-    a saddle-node bifurcation for $\eta=\eta_{sn}$. The trivial solution is stable for $\eta < 0$
+    a saddle-node bifurcation for $\eta=\eta_{sn}=-\frac14$. The trivial solution is stable for $\eta < 0$
     and unstable for $\eta > 0$.}
     \label{fig:pre_bif_subpitchfork}
 \end{figure}
@@ -210,7 +210,8 @@ that of {\em dynamical} bifurcations, in which dynamical equilibria emerge. The 
 that allows for the emergence of a limit cycle or, in other words, a periodic equilibrium. [Insert examples]. Since oscillations are impossible in 
 one dimension [ref strogatz], this bifurcation can only be present in systems of two or more dimensions. For simplicity, the following
 analysis will be restricted to only two dimensions. Nevertheless, it can easily be extended to the more general case of arbitrary dimensions.
-The normal form can be written in a compact form as a complex equation: Eq.~(\ref{eq:hopf}). It is important to mention that
+The normal form can be written in a compact form as a complex equation, Eq.~(\ref{eq:hopf}), for the
+order parameter $A = x +iy$. It is important to mention that
 the coefficient accompanying the cubic term could be complex, in that case, it corresponds to the Stuart-Landau equation which
 is the homogeneous part of the widely known Complex Ginzgurg-Landau equation.
 
@@ -235,16 +236,35 @@ amplitude $|A| = r = \sqrt{\eta}$ that increases continuously from zero.
 Similarly, as in the pitchfork bifurcation, this case corresponds to a supercritical
 bifurcation given that the limit cycle arising from the bifurcation is stable. Furthermore, the two results mentioned previously
 apply also in general, namely, that close to the
-bifurcation point $\eta_c$, the amplitude of the limit close grows with $\sqrt{\eta - \eta_c}$ and the frequency is approximately
+bifurcation point $\eta_c$, the amplitude of the limit cycle grows with $\sqrt{\eta - \eta_c}$ and the frequency is approximately
 the imaginary part of the eigenvalue at the bifurcation point: $\operatorname{Im}{\lambda(\eta_c)}$.
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/framework/hopf_phasespace.pdf}
+    \caption{Phase plane trajectories of Eq.~(\ref{eq:hopf}) showing a stable
+    focus for $\eta = -0.3$ in the left panel and a stable limit cycle for $\eta=0.3$
+    in the right panel}
+\end{figure}
 
 There is, however, a subcritical variation
 of the Andronov-Hopf bifurcation in which the emerging limit cycle is unstable and may stabilize at a secondary bifurcation point.
 The normal form is similar to the subcritical pitchfork since the cubic term has now the opposite sign and a quintic term is added to ensure the solution is bounded.
+Due to the additional quintic term, the emerging limit cycle stabilizes at $\eta_{sn} = -\frac14$ through
+a saddle-node bifurcation.
 
 \begin{equation}
     \dfrac{dA}{dt} = (\eta + i\omega) A + |A|^2 A - |A|^4A
 \end{equation}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{imagenes/framework/hopf_supersub.pdf}
+    \caption{The subcritical and supercritical scenarios of the Andornov-Hopf
+    bifurcation. Panel (a) shows the supercritical case and panel (b) shows the subcritical
+    case.}
+\end{figure}
 
 \section{Localized Structures}
 \label{sec:fra_LS}
