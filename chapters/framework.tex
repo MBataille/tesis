@@ -269,21 +269,46 @@ a saddle-node bifurcation.
 \section{Localized Structures}
 \label{sec:fra_LS}
 
-In the previous section, the simplest mechanisms for the emergence and
-change of stability of solutions have been discussed, yet little attention
-has been devoted to the solutions themselves. Indeed, in nonlinear dynamical
-systems, an enormous variety of equilibria are possible. In this section,
-special attention will be paid to one particular kind class of equilibria,
-the so-called localized structures. 
+% In the previous section, the simplest mechanisms for the emergence and
+% change of stability of solutions have been discussed, yet little attention
+% has been devoted to the solutions themselves. Indeed, in nonlinear dynamical
+% systems, an enormous variety of equilibria are possible. In this section,
+% special attention will be paid to one particular kind class of equilibria,
+% the so-called localized structures. 
 
-Localized structures are ubiquitous in nature. From a fundamental level,
-we know that quantum particles do not have a well-defined position, size,
-or velocity but instead correspond to a localized wave function, i.e. 
-they are described by a spatially localized field. Similarly,
-several meso- and macroscopical systems, 
-exhibit spatial (or even temporal) localization due to the exchange
-of energy or matter. Figure X illustrates 
-examples of such localized structures.
+Almost a century ago, our understanding of elementary or quantum particles went
+through a complete change of paradigm. Indeed, what was originally thought
+to be a microscopic speck of matter with a well-defined position, velocity and size
+was discovered instead to be a localized wave function lacking the former quantities.
+Half a century later, this change of paradigm carried over to meso- and macroscopical out-of-equilibrium
+systems. Nicols and Prigogine [insert ref] argued that the energy transfer present in these systems
+allows for complex and stable structures to form, such as localized structures. These localized states
+or particle-like solutions are supported by a robust balance between gains and losses and have been observed in a
+variety of systems due to their universality. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{imagenes/framework/LS/examples_ls.pdf}
+    \caption{Examples of localized structures in nonlinear optics, granular media and a simple
+    model for pattern formation. Panels (a)-(c) show experimental observations of a drifting breather
+    soliton in a microcavity \cite{yi2018imaging}, a chaoticon in a liquid crystal light valve \cite{verschueren2013spatiotemporal}, and an oscillon in a vibrating
+    layer of sand \cite{umbanhowar1996localized,aranson2006patterns}. Panel (d) shows a simulation of a localized labyrinth
+    in a simple pattern forming model \cite{clerc2021localised, clerc2022localized}.}
+    \label{fig:pre_ls_examplesls}
+\end{figure}
+
+Formally speaking, a LS corresponds to a well localized deviation of some reference background,
+typically a homogeneous steady state, although it might also be periodic (in space) or oscillatory (in time).
+As illustrated in Figure~(\ref{fig:pre_ls_examplesls}), they have been observed experimentally in one and two spatial dimensions, and predicted numerically in three dimensions.
+Their temporal dynamics are quite rich as well, they can present uniform motion, breathing or even chaotic behavior.
+From a mathematical point of view, their description relies on partial differential equations or,
+in the case of non-local systems, integro-differential equations. At least in one spatial dimension,
+it is possible to think of LS as a homoclinic orbit asymptotically approaching the reference state
+at the boundaries and performing an excursion in the neighborhood of another equilibrium in the center.
+In the more general case of two and three-dimensional LSs, the picture becomes more complex but the
+coexistence between two equilibria remains necessary for the formation of LSs.
+
+Willyford Columbo
 
 Examples of localized structures
 \begin{itemize}
@@ -292,11 +317,9 @@ Examples of localized structures
     \item Pulses
     \item Light bullets
     \item Spirals? Vortices?
+    \item Chaoticon
 \end{itemize}
 
-In at least one spatial dimension can be thought of as a homoclinic orbit that performs
-an excursion in the neighborhood of the periodic state. Coexistence between HSS and pattern.
-Is this always necessary? Probably not.
 
 \subsection{Solitons}
 
@@ -308,22 +331,25 @@ at the time until Korteweg and de Vries provided an integrable model for shallow
 and proved their existence in the now called Korteweg de Vries (KdV) equation \cite{korteweg1895xli}.
 It was only a century later that the term soliton was coined by Zabusky and Kruskal
 to emphasize their particle-like behavior after observing that solitons in the KdV equation could pass through each
-other with no change in shape or speed \cite{zabusky1965interaction}. Afterwards, solitons 
-have been extensively studied{ }---typically by means of the inverse scattering 
-transform \cite{gardner1967method, gardner1974korteweg}---
-in other integrable and conservative equations such as the nonlinear Schrödinger (NLS)
-equation [add examples] and the sine-Gordon equation [examples]. 
+other with no change in shape or speed \cite{zabusky1965interaction}. In the following
+years, the newly discovered inverse scattering transform \cite{gardner1967method, gardner1974korteweg}
+allowed to completely solve the KdV equation and find the analytical expression of solitons.
+Immediately after, it was extended to other integrable and conservative equations such as the nonlinear Schrödinger (NLS)
+equation \cite{shabat1972exact} and the sine-Gordon equation \cite{ablowitz1973method}. 
 In these systems, they arise due to a balance between dispersion and nonlinearity. 
 
 
-More recently, the term dissipative soliton (DS) was introduced to describe a qualitatively
-similar state, but in dissipative systems, where there is a continuous energy influx and 
-dissipation. In this context, an additional balance between gains and losses is required for the formation
-of solitons. It is important to emphasize that classical (conservative) solitons and dissipative solitons
+More recently, the term dissipative soliton (DS) was introduced to extend the previous definition
+and refers to a qualitatively
+similar state, but in driven dissipative systems, where there is a continuous energy influx and 
+dissipation. Although there is not a commonly agreed upon rigorous definition of DSs, they tipically
+exhibit certain features. Firstly, DSs are attractors with well-defined amplitude, shape and
+possess a characteristic length independent of the system size or boundary. Moreover, they tend to
+interact 
+In this context, an additional balance between gains and losses is required for the formation
+of DSs. It is important to emphasize that classical (conservative) solitons and dissipative solitons
 are two very different structures; the mathematics behind their presence, and therefore their
 properties, are distinct.
-
-[add more examples]
 
 
 \subsection{Swift-Hohenberg equation}
