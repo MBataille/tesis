@@ -297,6 +297,8 @@ variety of systems due to their universality.
     \label{fig:pre_ls_examplesls}
 \end{figure}
 
+[Replace by light bullet]
+
 Formally speaking, a LS corresponds to a well localized deviation of some reference background,
 typically a homogeneous steady state, although it might also be periodic (in space) or oscillatory (in time).
 As illustrated in Figure~(\ref{fig:pre_ls_examplesls}), they have been observed experimentally in one and two spatial dimensions, and predicted numerically in three dimensions.
@@ -306,19 +308,9 @@ in the case of non-local systems, integro-differential equations. At least in on
 it is possible to think of LS as a homoclinic orbit asymptotically approaching the reference state
 at the boundaries and performing an excursion in the neighborhood of another equilibrium in the center.
 In the more general case of two and three-dimensional LSs, the picture becomes more complex but the
-coexistence between two equilibria remains necessary for the formation of LSs.
+coexistence between two distinct equilibria remains necessary for the formation of LSs.
 
 Willyford Columbo
-
-Examples of localized structures
-\begin{itemize}
-    \item Localized labyrinth
-    \item Soliton, Dissipative soliton
-    \item Pulses
-    \item Light bullets
-    \item Spirals? Vortices?
-    \item Chaoticon
-\end{itemize}
 
 
 \subsection{Solitons}
@@ -342,17 +334,40 @@ In these systems, they arise due to a balance between dispersion and nonlinearit
 More recently, the term dissipative soliton (DS) was introduced to extend the previous definition
 and refers to a qualitatively
 similar state, but in driven dissipative systems, where there is a continuous energy influx and 
-dissipation. Although there is not a commonly agreed upon rigorous definition of DSs, they tipically
-exhibit certain features. Firstly, DSs are attractors with well-defined amplitude, shape and
-possess a characteristic length independent of the system size or boundary. Moreover, they tend to
-interact 
-In this context, an additional balance between gains and losses is required for the formation
-of DSs. It is important to emphasize that classical (conservative) solitons and dissipative solitons
+dissipation, requiring thus a balance between influx and dissipation. 
+Although there is not a commonly agreed-upon definition of DSs, they typically
+exhibit certain features. Firstly, DSs are attractors with well-defined amplitude and shape, and
+possess a characteristic length independent of the system size or boundary. Moreover, they
+tend to interact with other nearby DSs in a manner reminiscent of classical particles. 
+As a result, they often receive the name of particle-like states. It is important to emphasize that classical (conservative) solitons and dissipative solitons
 are two very different structures; the mathematics behind their presence, and therefore their
 properties, are distinct.
 
+In the following sections, a more in-depth description of LSs and DSs will be presented 
+in the context of two paradigmatic models: the Swift-Hohenberg equation and the Lugiato-Lefever
+equation.  
 
-\subsection{Swift-Hohenberg equation}
+
+\subsection{Turing-Swift-Hohenberg equation}
+
+The Turing-Swift-Hohenberg equation is possibly the simplest and most studied model 
+for the formation of patterns and localized structures, see \cite{cross1993pattern,knobloch2015spatial}
+for a comprehensive review. It was first introduced
+by Swift and Hohenberg as a phenomenological model to describe Rayleigh-Bénard
+convection \cite{swift1977hydrodynamic,pomeau1979stability}, although it was later 
+known that Turing had already written 
+a similar and more general equation in the context of morphogenesis \cite{dawes2016after}.
+In the context of this dissertation, the TSHE takes the following form
+
+\begin{equation}
+    \partial_t u = \varepsilon u - u ^3 - \nu \nabla^2 u - \nabla^4,
+    \label{eq:pre_ls_she}
+\end{equation}
+
+where $u$ is a real scalar field. Other variations can be envisaged with
+quadratic-cubic or cubic-quintic nonlinearities (ref Knobloch). For the sake of simplicity, 
+the following discussion will be restricted to the case of one spatial dimension. 
+[mention 2d and 3d results].
 
 \begin{itemize}
     \item Turing-Swift-Hohenberg as a paradigmatic and simple equation for pattern
@@ -360,22 +375,46 @@ formation. History. Read review from Hohenberg.
     \item Physical description, relevance to physical systems experiments. 
     Rayleigh-Benard convection? Buckling of a cylinder? Main results, vegetation,
     pattern formation on a disk Verschueren
+    \item Mathematical motivation 1, pattern formation, critical modes etc
     \item Mathematical motivation, why is it simple why does it allow for LS.
 Reversibility, hyperbolic points allow for a homoclinic connection
     \item Homoclinic snaking, manifolds etc.
 \end{itemize}
 
+\subsection{Spontaneous symmetry breaking and motion instabilities}
+
+\begin{itemize}
+    \item Motion fundamental, ubiquitous in this dissertation! Asymmetry behind motion.
+    \item Forced symmetry breaking? (spectral filtering, raman, etc)
+    \item Symmetric systems? Spontaneous symmetry breaking
+\end{itemize}
+
+Article by Alejandro Alvarez and references therein.
+
+
 \subsection{Resonant cavities and the Lugiato-Lefever equation}
+
+\begin{itemize}
+    \item Optics and nonlinear phenomena, dissipative structures / localized structures in otpics?
+    \item Lugiato-Lefever as a simple nonlinear model for resonant cavities that allows for the
+    formation of dissipative structures, similar to Prigogine
+    \item Main results, very good agreement theory/experiment, mention main experiments.
+    applications with combs.
+    \item Mathematical analysis, normal/anomalous regime, MI, etc.
+\end{itemize}
+
 [normal, anomalous regime, MI etc]
 
 \subsection{Non-local effects in the LLE}
-[HOD, Raman]
+
+\begin{itemize}
+    \item Dispersion curve, HOD
+    \item Memory effects, scattering
+    \item Experimental elements, spectral filtering
+\end{itemize}
 
 \subsubsection{Raman effect}
 \subsubsection{Spectral filtering}
-
-\subsection{Spontaneous symmetry breaking and motion instabilities}
-Article by Alejandro Alvarez.
 
 \section{Phase oscillators and Chimera states}
 Connection to LS?  Revisit chapter
