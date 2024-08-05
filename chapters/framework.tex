@@ -357,22 +357,52 @@ by Swift and Hohenberg as a phenomenological model to describe Rayleigh-Bénard
 convection \cite{swift1977hydrodynamic,pomeau1979stability}, although it was later 
 known that Turing had already written 
 a similar and more general equation in the context of morphogenesis \cite{dawes2016after}.
-In the context of this dissertation, the TSHE takes the following form
+The TSHE can be written in several forms, depending on the nonlinearities. The most common
+presents only a cubic nonlinearity, similar to a supercritical pitchfork; while other
+variations with either a quadratic-cubic or cubic-quintic nonlinearities can be envisaged \cite{knobloch2015spatial}.
+In the former case, the pattern (spatially periodic) state emerges supercritically whereas in the latter,
+it emerges subcritically. Since a coexistence between the pattern and the trivial state is necessary for the formation of LSs,
+the subcritical case will be the focus of the following discussion, and in particular the case of 
+the cubic-quintic TSHE,
 
 \begin{equation}
-    \partial_t u = \varepsilon u - u ^3 - \nu \nabla^2 u - \nabla^4 u,
+    \partial_t u = \varepsilon u + u ^3 - u^5 - \nu \nabla^2 u - \nabla^4 u,
     \label{eq:pre_ls_she}
 \end{equation}
 
-where $u$ is a real scalar field. Other variations can be envisaged with
-quadratic-cubic or cubic-quintic nonlinearities \cite{knobloch2015spatial}. 
-[mention 2d and 3d results].
+where $u$ is a real scalar field, $\varepsilon$ is the control parameter and $\nu>0$ can be set to
+one without loss of generality. It can be noted that Eq.~(\ref{eq:pre_ls_she}) is reflection symmetric
+with respect to both the $x$ and $u$ axes, i.e. is invariant under transformation $x\to -x$ and $u\to -u$.
+Moreover, the equation is variational, meaning that it minimizes a Lyapunov (or free energy) functional
+$\mathcal{F}[u]$ such that,
 
-It can be observed that the TSHE admits a trivial solution $u=0$. Through linear
-stability analysis with respect to perturbations of the form $\delta u = \exp{\sigma t + ikx}$
+\begin{equation}
+    \mathcal{F} = \dfrac12 \int_{-\infty}^{\infty} -\varepsilon u^2 - \dfrac12 u^4 + \dfrac13 u^6 - (\nabla u)^2 + (\nabla^2 u)^2 \ d^dr.
+\end{equation}
 
-For the sake of simplicity, the following discussion will be restricted to 
-the case of one spatial dimension. 
+As a result, the solutions of Eq.~(\ref{eq:pre_ls_she}) are stationary.
+In principle, Eq.~(\ref{eq:pre_ls_she}) can be written in 
+$d$ spatial dimensions, however, the following discussion will be restricted to the case of $d=1$ for simplicity.
+It can be observed that the TSHE admits a trivial solution $u=0$. Linear
+stability analysis with respect to perturbations of the form $\delta u = e^{\sigma t + ikx}$ yields
+the following dispersion relation for the growth rate,
+
+\begin{equation}
+    \sigma = \varepsilon + \nu k^2 - k^4.
+    \label{eq:pre_ls_she_disp}
+\end{equation}
+
+The critical mode for which patterns emerge can be obtained by setting $\sigma = 0$ in Eq.~(\ref{eq:pre_ls_she_disp}),
+revealing the critical wavenumber $k_c^2 = \frac{\nu}{2} \pm \sqrt{\varepsilon - \frac{\nu^2}{4}}$. From where
+it can be inferred that patterns emerge at a critical point (also called Turing point, or modulational instability) 
+$\varepsilon_c = \frac{\nu^2}{4}$. For increasing values of $\varepsilon$,
+the critical mode along with its neighboring band of modes become unstable, leading to an exponential growth
+until it saturates due to the nonlinear terms. As a result, patterns form with a characteristic length scale determined
+by $k_c$ (at least in the absence of boundaries).
+
+Furthermore, through a weakly nonlinear analysis around the bifurcation point [Refs], it can be shown
+that patterns emerge subcritically, and are accompanied by a set of four branches of localized structures.
+
 
 \begin{itemize}
     \item Turing-Swift-Hohenberg as a paradigmatic and simple equation for pattern
