@@ -20,7 +20,7 @@ parameters $\eta$ relevant to the modeled experiment (i.e. driving frequency, pu
 In this thesis, different dynamical systems in the form of Eq.~(\ref{eq:def_ds}) with a {\em nonlinear} function
 $\bm{f}$ will be considered. Although it might be argued that, at a fundamental level, the physical laws
 that describe the evolution of a system are linear (such as the Schrödinger equation), when one looks at meso- or macroscopical
-systems, nonlinear terms naturally arise due to the coarse-graining of the microscopical degrees of freedom [ref Karadr].
+systems, nonlinear terms naturally arise due to the coarse-graining of the microscopical degrees of freedom~\cite{kardar2007statistical}.
 
 
 In the case of a nonlinear dynamical system, it becomes extremely difficult, and often impossible, to find
@@ -44,7 +44,7 @@ Qualitative changes of equilibria as parameters are varied.
 
 {\em Saddle-node} or {\em fold} bifurcations provide the simplest mechanism 
 for which a pair of stable and unstable equilibria can be created (or destroyed) 
-as the control parameter is changed. Although they arise in a huge variety of systems 
+as the control parameter is changed~\cite{strogatz2018nonlinear}. Although they arise in a huge variety of systems 
 [insert ref], close to the bifurcation point the dynamics can always be reduced to
 the following minimal or {\em normal form}.
 
@@ -139,14 +139,14 @@ starting from positive (negative) values, the two equilibria attract (repel) eac
 \subsection{Pitchfork bifurcation}
 
 {\em Pitchfork} bifurcations typically arise in systems with symmetry and 
-provide a universal mechanism for symmetry-breaking [ref strogatz]. 
+provide a universal mechanism for symmetry-breaking~\cite{strogatz2018nonlinear}. 
 A simple example is given by the statistical description of magnetization. 
 In the absence of an external field, the net magnetization $m$ 
 (below the critical temperature $T_c$) can either be positive or negative 
 with no preferred orientation, thus depending only on the initial condition. On the
 other hand, if the system is heated above the critical temperature, no net magnetization
 is observed, i.e. $m=0$. In the context of statistical mechanics, this second-order
-transition can be described by a mean-field approximation from Landau theory, where
+transition can be described by a mean-field approximation from Landau theory\cite{kardar2007statistical}, where
 the free energy functional is expanded in (even) powers of $m$, thus arriving at exactly
 the pitchfork normal form, given by
 
@@ -208,7 +208,7 @@ The two bifurcations discussed previously describe the emergence of steady state
 More specifically, they belong to the class of {\em stationary} bifurcations. Here, a different class of bifurcations will be introduced,
 that of {\em dynamical} bifurcations, in which dynamical equilibria emerge. The simplest scenario is the Andronov-Hopf bifurcation
 that allows for the emergence of a limit cycle or, in other words, a periodic equilibrium. [Insert examples]. Since oscillations are impossible in 
-one dimension [ref strogatz], this bifurcation can only be present in systems of two or more dimensions. For simplicity, the following
+one dimension~\cite{strogatz2018nonlinear}, this bifurcation can only be present in systems of two or more dimensions. For simplicity, the following
 analysis will be restricted to only two dimensions. Nevertheless, it can easily be extended to the more general case of arbitrary dimensions.
 The normal form can be written in a compact form as a complex equation, Eq.~(\ref{eq:hopf}), for the
 order parameter $A = x +iy$. It is important to mention that
@@ -281,7 +281,7 @@ through a complete change of paradigm. Indeed, what was originally thought
 to be a microscopic speck of matter with a well-defined position, velocity and size
 was discovered instead to be a localized wave function lacking the former quantities.
 Half a century later, this change of paradigm carried over to meso- and macroscopical out-of-equilibrium
-systems. Nicols and Prigogine [insert ref] argued that the energy transfer present in these systems
+systems. Nicolis and Prigogine~\cite{prigogine1977self} argued that the energy transfer present in these systems
 allows for complex and stable structures to form, such as localized structures. These localized states
 or particle-like solutions are supported by a robust balance between gains and losses and have been observed in a
 variety of systems due to their universality. 
@@ -289,19 +289,17 @@ variety of systems due to their universality.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.7\textwidth]{imagenes/framework/LS/examples_ls.pdf}
-    \caption{Examples of localized structures in nonlinear optics, granular media and a simple
-    model for pattern formation. Panels (a)-(c) show experimental observations of a drifting breather
-    soliton in a microcavity \cite{yi2018imaging}, a chaoticon in a liquid crystal light valve \cite{verschueren2013spatiotemporal}, and an oscillon in a vibrating
-    layer of sand \cite{umbanhowar1996localized,aranson2006patterns}. Panel (d) shows a simulation of a localized labyrinth
-    in a simple pattern forming model \cite{clerc2021localised, clerc2022localized}.}
+    \caption{Examples of localized structures in nonlinear optics and granular media. Panels (a)-(d) show experimental observations of a drifting breather
+    soliton in a microcavity~\cite{yi2018imaging}, a chaoticon in a liquid crystal light 
+    valve~\cite{verschueren2013spatiotemporal}, an oscillon in a vibrating
+    layer of sand~\cite{umbanhowar1996localized,aranson2006patterns}, and a three-dimensional
+    light bullet in a waveguide array~\cite{minardi2010three}.}
     \label{fig:pre_ls_examplesls}
 \end{figure}
 
-[Replace by light bullet]
-
 Formally speaking, a LS corresponds to a well localized deviation of some reference background,
 typically a homogeneous steady state, although it might also be periodic (in space) or oscillatory (in time).
-As illustrated in Figure~(\ref{fig:pre_ls_examplesls}), they have been observed experimentally in one and two spatial dimensions, and predicted numerically in three dimensions.
+As illustrated in Figure~(\ref{fig:pre_ls_examplesls}), they have been observed experimentally in one, two, and even three dimensions.
 Their temporal dynamics are quite rich as well, they can present uniform motion, breathing or even chaotic behavior.
 From a mathematical point of view, their description relies on partial differential equations or,
 in the case of non-local systems, integro-differential equations. At least in one spatial dimension,
@@ -309,8 +307,6 @@ it is possible to think of LS as a homoclinic orbit asymptotically approaching t
 at the boundaries and performing an excursion in the neighborhood of another equilibrium in the center.
 In the more general case of two and three-dimensional LSs, the picture becomes more complex but the
 coexistence between two distinct equilibria remains necessary for the formation of LSs.
-
-Willyford Columbo
 
 
 \subsection{Solitons}
@@ -359,7 +355,7 @@ known that Turing had already written
 a similar and more general equation in the context of morphogenesis \cite{dawes2016after}.
 The TSHE can be written in several forms, depending on the nonlinearities. The most common
 presents only a cubic nonlinearity, similar to a supercritical pitchfork; while other
-variations with either a quadratic-cubic or cubic-quintic nonlinearities can be envisaged \cite{knobloch2015spatial}.
+variations with either a quadratic-cubic or cubic-quintic nonlinearities can be envisaged \cite{burke2007snakes,knobloch2015spatial}.
 In the former case, the pattern (spatially periodic) state emerges supercritically whereas in the latter,
 it emerges subcritically. Since a coexistence between the pattern and the trivial state is necessary for the formation of LSs,
 the subcritical case will be the focus of the following discussion, and in particular the case of 
@@ -394,48 +390,57 @@ the following dispersion relation for the growth rate,
 
 The critical mode for which patterns emerge can be obtained by setting $\sigma = 0$ in Eq.~(\ref{eq:pre_ls_she_disp}),
 revealing the critical wavenumber $k_c^2 = \frac{\nu}{2} \pm \sqrt{\varepsilon - \frac{\nu^2}{4}}$. From where
-it can be inferred that patterns emerge at a critical point (also called Turing point, or modulational instability) 
-$\varepsilon_c = \frac{\nu^2}{4}$. For increasing values of $\varepsilon$,
-the critical mode along with its neighboring band of modes become unstable, leading to an exponential growth
-until it saturates due to the nonlinear terms. As a result, patterns form with a characteristic length scale determined
-by $k_c$ (at least in the absence of boundaries).
+it can be inferred that patterns emerge at a critical point $\varepsilon_c = \frac{\nu^2}{4}$ 
+(also called Turing point, or modulational instability). For increasing values of $\varepsilon$,
+the critical mode, along with its neighboring band of modes, becomes unstable, leading to an exponential growth
+until it saturates due to the nonlinear terms. In consequence, patterns form with a characteristic length scale determined
+by $k_c$, provided the system is large enough to neglect boundary effects.
 
 Furthermore, perturbation theory close to the bifurcation point \cite{burke2007snakes}
 predicts that the pattern state emerges subcritically, along with four branches of
 localized states parametrized by their phase $\phi = 0, \pi/2, \pi, 3\pi/2$. These
 four branches come in even ($\phi = 0, \pi$) and odd ($\phi = \pi/2, 3\pi/2$) pairs.
 Each pair of branches is related by a reflection symmetry $u \to -u$, and thus,
-share the same norm. By means of numerical continuation (see Chapter~\ref{ch:continuation}),
+share the same norm. By means of numerical continuation (see Chapter~\ref{ch:continuation}
+for a detailed explanation),
 the solution branches far from the bifurcation point can be followed, revealing the
-bifurcation diagram shown in Fig.~(\ref{fig:pre_ls_she_bif}).
+bifurcation diagram shown in Fig.~\ref{fig:pre_ls_she_bif}.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.7\textwidth]{imagenes/framework/LS/snaking_she35.pdf}
-    \caption{Bifurcation diagram showing the two pairs of symmetric (blue) and asymmetric
-    (orange) localized states, along with the homogeneous steady state (black) and the pattern state (green).
-    Solid (dashed) lines represent stable (unstable) branches.}
+    \includegraphics[width=0.9\textwidth]{imagenes/framework/LS/she_full_snaking.pdf}
+    \caption{Homoclinic snaking of LSs in the cubic-quintic SHE, Eq.~(\ref{eq:pre_ls_she}).
+    Panels (a) show the spatial profile of the first two odd and even LSs.
+    Panel (b) corresponds to the bifurcation diagram showing the two pairs of symmetric 
+    (blue) and asymmetric (orange) LSs, along with the homogeneous steady 
+    state (black) and the pattern state (green). The snaking or pinning region is shaded in green. 
+    Solid (dashed) lines represent stable (unstable) branches. A zoom of 
+    the snaking region is shown in panel (c).}
     \label{fig:pre_ls_she_bif}
 \end{figure}
 
 An intriguing feature of Eq.~(\ref{eq:pre_ls_she}) is the snaking behavior of the branches of LSs, as shown
-in Fig.~(\ref{fig:pre_ls_she_bif}). More specifically, it can be observed that a new wavelength 
-is added to the LSs after undergoing a pair of saddle-node bifurcations.
-This so-called homoclinic snaking is a consequence of the heteroclinic entanglement
+in Fig.~\ref{fig:pre_ls_she_bif}. Indeed, it can be observed that a new wavelength 
+is added to the LSs after it undergoes a pair of saddle-node bifurcations. On a finite
+domain, this behavior continues until no more wavelengths can be added, at which point the branches
+of LSs connect to the pattern state at its saddle-node bifurcation point.
+This so-called homoclinic snaking is a consequence of the heteroclinic tangle
 between the stable and unstable manifolds of the HSS and pattern state, 
-respectively~\cite{woods1999heteroclinic,coullet2000stable}.
+respectively~\cite{woods1999heteroclinic,coullet2000stable}. Indeed, as the
+control parameter varies and enters the snaking region, both manifolds start
+to intersect each other, tangentially at first, and then transversally~\cite{knobloch2015spatial}. 
+It is due
+to these intersections that homoclinic orbits connecting the HSS and the pattern state
+(i.e. LSs) are formed.
 
-\begin{itemize}
-    \item Turing-Swift-Hohenberg as a paradigmatic and simple equation for pattern
-formation. History. Read review from Hohenberg.
-    \item Physical description, relevance to physical systems experiments. 
-    Rayleigh-Benard convection? Buckling of a cylinder? Main results, vegetation,
-    pattern formation on a disk Verschueren
-    \item Mathematical motivation 1, pattern formation, critical modes etc
-    \item Mathematical motivation, why is it simple why does it allow for LS.
-Reversibility, hyperbolic points allow for a homoclinic connection
-    \item Homoclinic snaking, manifolds etc.
-\end{itemize}
+The snaking bifurcation scenario discussed previously is not exclusive to the TSHE. 
+On the contrary, it has been observed in a wide variety of systems, albeit with 
+some qualitative differences. For instance, in the case of conservative or non-local systems,
+it has been found that the snaking may become slanted or 
+tilted~\cite{firth2007proposed,dawes2008localized,beaume2013convectons}. 
+Nevertheless, the underlying picture remains the same,
+provided that the system is spatially reversible and manifolds intersect 
+transversally~\cite{knobloch2015spatial}.
 
 \subsection{Spontaneous symmetry breaking and motion instabilities}
 
