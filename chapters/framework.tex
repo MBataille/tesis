@@ -400,9 +400,30 @@ the critical mode along with its neighboring band of modes become unstable, lead
 until it saturates due to the nonlinear terms. As a result, patterns form with a characteristic length scale determined
 by $k_c$ (at least in the absence of boundaries).
 
-Furthermore, through a weakly nonlinear analysis around the bifurcation point [Refs], it can be shown
-that patterns emerge subcritically, and are accompanied by a set of four branches of localized structures.
+Furthermore, perturbation theory close to the bifurcation point \cite{burke2007snakes}
+predicts that the pattern state emerges subcritically, along with four branches of
+localized states parametrized by their phase $\phi = 0, \pi/2, \pi, 3\pi/2$. These
+four branches come in even ($\phi = 0, \pi$) and odd ($\phi = \pi/2, 3\pi/2$) pairs.
+Each pair of branches is related by a reflection symmetry $u \to -u$, and thus,
+share the same norm. By means of numerical continuation (see Chapter~\ref{ch:continuation}),
+the solution branches far from the bifurcation point can be followed, revealing the
+bifurcation diagram shown in Fig.~(\ref{fig:pre_ls_she_bif}).
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{imagenes/framework/LS/snaking_she35.pdf}
+    \caption{Bifurcation diagram showing the two pairs of symmetric (blue) and asymmetric
+    (orange) localized states, along with the homogeneous steady state (black) and the pattern state (green).
+    Solid (dashed) lines represent stable (unstable) branches.}
+    \label{fig:pre_ls_she_bif}
+\end{figure}
+
+An intriguing feature of Eq.~(\ref{eq:pre_ls_she}) is the snaking behavior of the branches of LSs, as shown
+in Fig.~(\ref{fig:pre_ls_she_bif}). More specifically, it can be observed that a new wavelength 
+is added to the LSs after undergoing a pair of saddle-node bifurcations.
+This so-called homoclinic snaking is a consequence of the heteroclinic entanglement
+between the stable and unstable manifolds of the HSS and pattern state, 
+respectively~\cite{woods1999heteroclinic,coullet2000stable}.
 
 \begin{itemize}
     \item Turing-Swift-Hohenberg as a paradigmatic and simple equation for pattern
