@@ -7,7 +7,7 @@ the solution branches as they experience several bifurcations. There, we conside
 models where this information could be obtained analytically. However, in the problems considered
 in this dissertation, and in general, it is not usually possible to do so. Therefore,
 we must resort to numerical methods, more specifically, 
-{\em numerical continuation} algorithms. This type of methods
+{\em numerical continuation} algorithms~\cite{seydel2009practical}. This type of methods
 aim to solve a nonlinear equation or, more generally, a system of nonlinear 
 equations to find the desired steady states of a dynamical system 
 as parameters are changed. This task corresponds to finding the roots 
@@ -23,12 +23,12 @@ as parameters are changed. This task corresponds to finding the roots
 \end{equation}
 
 Although there are several methods for finding the roots of a vector function,
-in this thesis we will only use Newton's method because of its fast 
+in this thesis we will only use Newton-Raphson's method because of its fast 
 (quadratic) convergence and simplicity. This method corresponds to an 
 iterative algorithm that, given an initial guess $\bm{u_0}$, will perform 
 successive iterations until a certain accuracy or tolerance is reached. 
 Each iteration is computed using Eqs~(\ref{eq:pre_nc_newt1}-\ref{eq:pre_nc_newt2}),
-where $\matr{J}(\bm{u}_i, \eta)$ is the Jacobian of $\bm{F}$. 
+where $\matr{J}(\bm{u}_i, \eta)$ is the Jacobian of $\bm{F}$ in Eq.~(\ref{eq:pre_nc_zeros}). 
 Moreover, since the Jacobian is computed at every point, the stability 
 of the solution and the location of bifurcation points can be determined
 by tracking the sign of the determinant of the Jacobian.
@@ -55,7 +55,7 @@ computed. This method is usually called {\em Natural Parameter Continuation}
 \begin{exmp}
     To illustrate the method, consider the normal form of the {\em imperfect pitchfork
     bifurcation}. Depending on the context, this model could describe magnetization
-    under an external electric field or even optical bistability [refs]. We will 
+    under an external electric field or even optical bistability~\cite{strogatz2018nonlinear}. We will 
     keep $\epsilon > 0$ fixed and
     find both the stable and unstable solution branches as $\eta$ is varied.
 \begin{equation}
@@ -98,7 +98,7 @@ for a higher-dimensional system where the
 bifurcation scenario is more complicated, 
 this quickly becomes impractical. To overcome this limitation,
 one can implement a more robust continuation scheme: 
-the {\em pseudo-arclength continuation}.
+the {\em pseudo-arclength continuation}}~\cite{keller1977numerical}.
 
 \section{Pseudo-arclength continuation}
 
