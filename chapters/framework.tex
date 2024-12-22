@@ -1,13 +1,15 @@
 \chapter{Preliminary concepts}
 
+\label{ch:preliminary}
+
 \section{Dynamical Systems}
 
-[introducir bien el tema]. 
+% [introducir bien el tema]. 
 
 The general form for a dynamical system is the following.
 
 \begin{equation}
-    \dfrac{d\bm{u}}{dt} = \bm{f}(\bm{u}, \eta), \qquad \bm{f} : \mathbb{R}^N \times \mathbb{R}^{n_\eta} \to \mathbb{R}^N
+    \dfrac{d\bm{u}}{dt} = \bm{f}(\bm{u}, \eta), \qquad \bm{f} : \mathbb{R}^N \times \mathbb{R}^{n_\eta} \to \mathbb{R}^N.
     \label{eq:def_ds}
 \end{equation}
 
@@ -15,7 +17,7 @@ Here, $\bm{u}$ represents the state vector of the system, it might correspond to
 concentrations of different chemicals, the population of certain species or the amplitude
 of an electric field. The temporal evolution of the state of the system is thus determined by 
 the vector function $\bm{f}$. This function may, in turn, depend on one or more control
-parameters $\eta$ relevant to the modeled experiment (i.e. driving frequency, pumping power, etc).
+parameters $\eta$ relevant to the modeled experiment (i.e. driving frequency, pumping power, etc.).
 
 In this thesis, different dynamical systems in the form of Eq.~(\ref{eq:def_ds}) with a {\em nonlinear} function
 $\bm{f}$ will be considered. Although it might be argued that, at a fundamental level, the physical laws
@@ -31,7 +33,15 @@ In the following section, the elementary bifurcations a system can experience wi
 
 \section{Bifurcations}
 
-Qualitative changes of equilibria as parameters are varied.
+One of the pioneers in identifying the importance of bifurcations in the study of dynamical systems
+was Henri Poincaré while studying the different stable
+configurations of a gravitating rotating fluid, along with their respective stability~\cite{poincare1885equilibre}. 
+In doing so, he coined the
+term {\em bifurcation}, refering to the point in the parameter space at which different solutions branch off from a another solution.
+To this day, his definition remains valid and, more formally, corresponds to a qualitative change 
+in the system's behavior, related to the transition between different equilibria or to the exchange of stability,
+as a control parameter is varied~\cite{strogatz2018nonlinear}.
+
 
 % Ideas:
 % \begin{enumerate}
@@ -44,8 +54,9 @@ Qualitative changes of equilibria as parameters are varied.
 
 {\em Saddle-node} or {\em fold} bifurcations provide the simplest mechanism 
 for which a pair of stable and unstable equilibria can be created (or destroyed) 
-as the control parameter is changed~\cite{strogatz2018nonlinear}. Although they arise in a huge variety of systems 
-[insert ref], close to the bifurcation point the dynamics can always be reduced to
+as the control parameter is changed~\cite{strogatz2018nonlinear}. Although they 
+arise in a huge variety of systems~\cite{Jackson_1989}, close to the bifurcation 
+point, the dynamics can always be reduced to
 the following minimal or {\em normal form}.
 
 \begin{equation}
@@ -77,9 +88,11 @@ starting from positive (negative) values, the two equilibria attract (repel) eac
 
 \begin{exmp}
     For centuries, the mystery of synchronization between fireflies has
-    captivated many people. Although many open questions remain on this topic [ref],
+    captivated the scientific community, and only recently has it been
+    partially unveiled. Although the topic is intricate and will be discussed
+    in more detail in Section~\ref{sec:phase_oscillators},
     we will aim to shed {\em light} on this topic only with the knowledge of saddle-node bifurcations
-    and a simple model proposed by Ermentrout and ...[ref]. 
+    and a simple model proposed by Ermentrout and Rinzel~\cite{ermentrout1984beyond}. 
     
     Consider the problem
     of a firefly flashing under the presence of a periodically flashing light.
@@ -93,22 +106,22 @@ starting from positive (negative) values, the two equilibria attract (repel) eac
     or slow down if it is going too fast. The simplest non-linear model that
     fulfills these assumptions is the following,
     \begin{align*}
-        \dot{\phi} &= \Omega \\
-        \dot{\theta} &= \omega + A \sin(\phi -  \theta)
+        \dot{\phi} &= \Omega, \\
+        \dot{\theta} &= \omega + A \sin(\phi -  \theta).
     \end{align*}
 
     Subtracting both equations and defining $\varphi = \dot{\phi} - \dot{\theta}$
     yields 
 
     \begin{equation*}
-        \dot{\varphi} = \Omega - \omega - A \sin \varphi
+        \dot{\varphi} = \Omega - \omega - A \sin \varphi,
     \end{equation*}
 
-    which can be adimensionalized by rescaling $t \to At$ and introducing
+    \noindent which can be adimensionalized by rescaling $t \to At$ and introducing
     the non-dimensional parameter $\mu = (\Omega - \omega)/A$,
 
     \begin{equation}
-        \dot{\varphi} = \mu - \sin \varphi
+        \dot{\varphi} = \mu - \sin \varphi.
         \label{eq:pre_bif_sn_exmp}
     \end{equation}
 
@@ -125,12 +138,12 @@ starting from positive (negative) values, the two equilibria attract (repel) eac
     and inserting the previous ansatz into Eq.~(\ref{eq:pre_bif_sn_exmp}) yields
     the following
     \begin{align*}
-        \dot{\varphi} = \dot{u} &= 1 + \eta - \cos u \\ 
-        &\approx 1 + \eta - (1 - \dfrac12 u^2) \\
-        &= \eta - \dfrac12 u^2
+        \dot{\varphi} = \dot{u} &= 1 + \eta - \cos u, \\ 
+        &\approx 1 + \eta - (1 - \dfrac12 u^2), \\
+        &= \eta - \dfrac12 u^2,
     \end{align*}
 
-    Which after adequate rescaling corresponds exactly with the saddle-node
+    \noindent which after adequate rescaling corresponds exactly with the saddle-node
     normal form.
     
 
@@ -138,7 +151,7 @@ starting from positive (negative) values, the two equilibria attract (repel) eac
 
 \subsection{Pitchfork bifurcation}
 
-{\em Pitchfork} bifurcations typically arise in systems with symmetry and 
+{\em Pitchfork} bifurcations typically arise in systems with reflection symmetry and 
 provide a universal mechanism for symmetry-breaking~\cite{strogatz2018nonlinear}. 
 A simple example is given by the statistical description of magnetization. 
 In the absence of an external field, the net magnetization $m$ 
@@ -146,7 +159,8 @@ In the absence of an external field, the net magnetization $m$
 with no preferred orientation, thus depending only on the initial condition. On the
 other hand, if the system is heated above the critical temperature, no net magnetization
 is observed, i.e. $m=0$. In the context of statistical mechanics, this second-order
-transition can be described by a mean-field approximation from Landau theory\cite{kardar2007statistical}, where
+transition can be described by a mean-field approximation from Landau 
+theory~\cite{landau2013statistical,kardar2007statistical}, where
 the free energy functional is expanded in (even) powers of $m$, thus arriving at exactly
 the pitchfork normal form, given by
 
@@ -181,7 +195,7 @@ a negative quintic term is added to ensure the solution is bounded, and thus, th
 relevant. The modified normal form corresponds to Eq.~(\ref{eq:pre_bif_pitchfork_subcritical}).
 
 \begin{equation}
-    \dfrac{du}{dt} = \eta u + u ^ 3 - u^5
+    \dfrac{du}{dt} = \eta u + u ^ 3 - u^5.
     \label{eq:pre_bif_pitchfork_subcritical}
 \end{equation}
 
@@ -207,16 +221,17 @@ bifurcation, a hysteresis loop is typically observed.
 The two bifurcations discussed previously describe the emergence of steady states or fixed points. 
 More specifically, they belong to the class of {\em stationary} bifurcations. Here, a different class of bifurcations will be introduced,
 that of {\em dynamical} bifurcations, in which dynamical equilibria emerge. The simplest scenario is the Andronov-Hopf bifurcation
-that allows for the emergence of a limit cycle or, in other words, a periodic equilibrium. [Insert examples]. Since oscillations are impossible in 
+that allows for the emergence of a limit cycle or, in other words, a periodic equilibrium. Since oscillations are impossible in 
 one dimension~\cite{strogatz2018nonlinear}, this bifurcation can only be present in systems of two or more dimensions. For simplicity, the following
 analysis will be restricted to only two dimensions. Nevertheless, it can easily be extended to the more general case of arbitrary dimensions.
 The normal form can be written in a compact form as a complex equation, Eq.~(\ref{eq:hopf}), for the
 order parameter $A = x +iy$. It is important to mention that
-the coefficient accompanying the cubic term could be complex, in that case, it corresponds to the Stuart-Landau equation which
-is the homogeneous part of the widely known Complex Ginzgurg-Landau equation.
+the coefficient accompanying the cubic term could be complex, in that case, it corresponds to
+the Stuart-Landau equation~\cite{landau1944problem,stuart1958non} which
+is the homogeneous part of the widely known Complex Ginzgurg-Landau equation~\cite{aranson2002world}.
 
 \begin{equation}
-    \dfrac{dA}{dt} = (\eta + i\omega)A - |A|^2 A
+    \dfrac{dA}{dt} = (\eta + i\omega)A - |A|^2 A.
      \label{eq:hopf}
 \end{equation}
 
@@ -226,8 +241,8 @@ focus, whereas for $\eta > 0$, the eigenvalues have crossed the imaginary axis r
 by rewriting Eq.~(\ref{eq:hopf}) in polar coordinates $A = re^{i\theta}$, the emergence of a limit cycle is evidenced.
 
 \begin{align}
-    \dot{r} &= r(\eta - r^2)\\
-    \dot{\theta} &= \omega
+    \dot{r} &= r(\eta - r^2),\\
+    \dot{\theta} &= \omega.
     \label{eq:hopf_polar}
 \end{align}
 
@@ -344,29 +359,30 @@ in the context of two paradigmatic models: the Swift-Hohenberg equation and the 
 equation.  
 
 
-\subsection{Turing-Swift-Hohenberg equation}
+\subsection{Swift-Hohenberg equation}
 
-The Turing-Swift-Hohenberg equation is possibly the simplest and most studied model 
+The Swift-Hohenberg equation (SHE) is possibly the simplest and most studied model 
 for the formation of patterns and localized structures, see \cite{cross1993pattern,knobloch2015spatial}
 for a comprehensive review. It was first introduced
 by Swift and Hohenberg as a phenomenological model to describe Rayleigh-Bénard
 convection \cite{swift1977hydrodynamic,pomeau1979stability}, although it was later 
 known that Turing had already written 
 a similar and more general equation in the context of morphogenesis \cite{dawes2016after}.
-The TSHE can be written in several forms, depending on the nonlinearities. The most common
+Thus, it is also refered to as the Turing-Swift-Hohenberg equation.
+The SHE can be written in several forms, depending on the nonlinearities. The most common
 presents only a cubic nonlinearity, similar to a supercritical pitchfork; while other
 variations with either a quadratic-cubic or cubic-quintic nonlinearities can be envisaged \cite{burke2007snakes,knobloch2015spatial}.
 In the former case, the pattern (spatially periodic) state emerges supercritically whereas in the latter,
 it emerges subcritically. Since a coexistence between the pattern and the trivial state is necessary for the formation of LSs,
 the subcritical case will be the focus of the following discussion, and in particular the case of 
-the cubic-quintic TSHE,
+the cubic-quintic SHE,
 
 \begin{equation}
     \partial_t u = \varepsilon u + u ^3 - u^5 - \nu \nabla^2 u - \nabla^4 u,
     \label{eq:pre_ls_she}
 \end{equation}
 
-where $u$ is a real scalar field, $\varepsilon$ is the control parameter and $\nu>0$ can be set to
+\noindent where $u$ is a real scalar field, $\varepsilon$ is the control parameter and $\nu>0$ can be set to
 one without loss of generality. It can be noted that Eq.~(\ref{eq:pre_ls_she}) is reflection symmetric
 with respect to both the $x$ and $u$ axes, i.e. is invariant under transformation $x\to -x$ and $u\to -u$.
 Moreover, the equation is variational, meaning that it minimizes a Lyapunov (or free energy) functional
@@ -379,7 +395,7 @@ $\mathcal{F}[u]$ such that,
 As a result, the solutions of Eq.~(\ref{eq:pre_ls_she}) evolve into stationary states.
 In principle, Eq.~(\ref{eq:pre_ls_she}) can be written in 
 $d$ spatial dimensions, however, the following discussion will be restricted to the case of $d=1$ for simplicity.
-It can be observed that the TSHE admits a trivial solution $u=0$. Linear
+It can be observed that the SHE admits a trivial solution $u=0$. Linear
 stability analysis with respect to perturbations of the form $\delta u = e^{\sigma t + ikx}$ yields
 the following dispersion relation for the growth rate,
 
@@ -433,7 +449,7 @@ It is due
 to these intersections that homoclinic orbits connecting the HSS and the pattern state
 (i.e. LSs) are formed.
 
-The snaking bifurcation scenario discussed previously is not exclusive to the TSHE. 
+The snaking bifurcation scenario discussed previously is not exclusive to the SHE. 
 On the contrary, it has been observed in a wide variety of systems, albeit with 
 some qualitative differences. For instance, in the case of conservative or non-local systems,
 it has been found that the snaking may become slanted or 
@@ -452,7 +468,7 @@ more complex and realistic system, arising in nonlinear optical resonators. Inde
 to provide a minimal model for the formation of patterns and dissipative
 structures in the context of optics, Lugiato and Lefever derived a damped driven nonlinear
 Schrödinger equation in~\cite{lugiatolefever1987} to describe resonant cavities under idealized conditions.
-Although, this equation had been reported earlier in the context of condensate~\cite{kaup1978theory}
+Although this equation had been reported earlier in the context of condensate~\cite{kaup1978theory}
 and plasma physics~\cite{morales1974ponderomotive}, Lugiato and Lefever were pioneers in its application
 to optics, hence it is now known as the Lugiato-Lefever equation (LLE), at least in this context. 
 
@@ -463,31 +479,62 @@ Moreover, these microresonators
 systems have become essential for the generation of broadband frequency combs, corresponding to equally
 spaced spectral lines, with applications in numerous
 fields~\cite{Jost2015clock,marin2017microresonator,suh2019searching}. The generation of frequency combs
-relies in the formation of either Turing patterns or dissipative solitons. The latter has proved 
-to be particularly useful due to its low noise and high coherence.
+has been found to be intamately related to the formation of LSs inside the 
+resonator~\cite{coen2012modeling,coen2013universal,chembo2013spatiotemporal}.
+As a result,
+the LLE has become a fundamental model for the study of dissipative structures in optics, both 
+because of its simplicity and its accuracy in describing the dynamics of driven resonators. 
 
+In non-dimensional form, the longitudinal LLE can be written as follows,
 
-\begin{itemize}
-    \item Optics and nonlinear phenomena, dissipative structures / localized structures in otpics?
-    \item Lugiato-Lefever as a simple nonlinear model for resonant cavities that allows for the
-    formation of dissipative structures, similar to Prigogine
-    \item Main results, very good agreement theory/experiment, mention main experiments.
-    applications with combs.
-    \item Mathematical analysis, normal/anomalous regime, MI, etc.
-\end{itemize}
+\begin{equation}
+    \partial_t E = E_0 -(1 + i\theta)E + i |E|^2 E + i\beta \partial_{\tau}^2 E,
+    \label{eq:pre_ls_lle}
+\end{equation}
 
-[normal, anomalous regime, MI etc]
+\noindent where $E(t, \tau)$ is the complex electric field envelope, $t$ represents the slow time (over many roundtrips)
+and $\tau$ the fast time in the moving frame of reference (along the cavity roundtrip), $E_0$ is the normalized pump power, $\theta$ is the normalized
+detuning from the cavity resonance, and $\beta$ is the normalized dispersion. Depending on the sign of the dispersion,
+two regimes can be distinguised: the normal dispersion regime ($\beta = - 1$) and the anomalous dispersion regime ($\beta = 1$).
+The two cases support different types of LSs, with the former presenting dark solitons and the latter bright solitons.
+The following analysis will be restricted to the anomalous dispersion regime, as it is the most relevant for subsequent
+chapters.
 
-\subsection{Non-local effects in the LLE}
+The homogeneous steady states (HSS) of Eq.~(\ref{eq:pre_ls_lle}) can be found by setting $\partial_t E = \partial_{\tau}^2 E = 0$,
+and taking the modulus squared of the equation, yielding the following cubic equation for the intracavity amplitude $I = |E|^2$,
+in terms of the pump amplitude $I_0 = |E_0|^2$,
 
-\begin{itemize}
-    \item Dispersion curve, HOD
-    \item Memory effects, scattering
-    \item Experimental elements, spectral filtering
-\end{itemize}
+\begin{equation}
+    I^3 - 2\theta I^2 + (1 + \theta^2)I - I_0 = 0.
+    \label{eq:pre_ls_lle_hss}
+\end{equation}
 
-\subsubsection{Raman effect}
-\subsubsection{Spectral filtering}
+For $\theta < \sqrt{3}$, Eq.~(\ref{eq:pre_ls_lle_hss}) has only one real root, in which case the system is monostable; whereas
+for $\theta > \sqrt{3}$, three real roots are present, and the systems is said to be bistable. In the latter case, the
+transition between the three distinct HSS occurs via two saddle-node bifurcations, located at
+
+\begin{equation}
+    I_{sn}^{\pm} = \dfrac{1}{3} \left(2\theta \pm \sqrt{\theta^2 - 3}\right).
+    \label{eq:pre_ls_lle_sn}
+\end{equation}
+
+Moreover, linear stability analysis
+with respect to perturbations of the form $e^{\sigma t + i\kappa \tau}$ predicts a modulational instability at $I = 1$
+for $\theta < 2$. On the other hand, for $\theta > 2$, the modulational instability occurs at the lower saddle-node
+bifurcation point $I_{sn}^-$.
+
+% [snaking]
+
+% \subsection{Non-local effects in the LLE}
+
+% \begin{itemize}
+%     \item Dispersion curve, HOD
+%     \item Memory effects, scattering
+%     \item Experimental elements, spectral filtering
+% \end{itemize}
+
+% \subsubsection{Raman effect}
+% \subsubsection{Spectral filtering}
 
 
 \subsection{Spontaneous symmetry breaking and motion instabilities}
@@ -501,31 +548,298 @@ The appearance of moving LSs is associated with the breaking of reflection symme
 distinct mechanisms responsible for this symmetry breaking can be identified: forced
 (or external) and spontaneous (or internal). The former has been widely observed and 
 corresponds to the case
-where the LS is driven by an external perturbation, such as a phase gradient, a time-delayed
-feedback, or nonreciprocal coupling. A typical feature in these systems is that the LSs
+where the LS is driven by an external perturbation, such as a phase gradient~\cite{turaev2008chaotic}, 
+a space-delayed feedback~\cite{haudin2011vortex}, or nonreciprocal coupling~\cite{pinto2021nonreciprocal}. A typical feature in these systems is that the LSs
 move in a direction determined by the symmetry-breaking perturbation, since there
 is a preferred direction.
 The latter, on the other hand, is less frequent and arises in isotropic and
 nonvariational systems, where an asymmetric mode becomes unstable through an internal
-instability, thus leading to the propagation of LSs. In these cases the LSs can move 
+instability~\cite{michaelis2001universal}, thus leading to the propagation of LSs. This transition from motionless
+to traveling solutions is also known as an out-of-equilibrium Ising-Bloch 
+transition~\cite{coullet1990breaking,gilli1994ising,haim1996breathing,michaelis2001universal,clerc2010localized}.
+In these cases the LSs may move 
 in more than one direction, which will be determined by the initial condition. 
 
 
-\begin{itemize}
-    \item Motion fundamental, ubiquitous in this dissertation! Asymmetry behind motion.
-    \item Forced symmetry breaking? (spectral filtering, raman, etc)
-    \item Symmetric systems? Spontaneous symmetry breaking
-\end{itemize}
-
-Article by Alejandro Alvarez and references therein.
-
 \section{Phase oscillators and Chimera states}
-Connection to LS?  Revisit chapter
+
+Previously, the self-organization of extended systems into localized patterns has been exposed
+in a variety of contexts. In this section, the focus will be diverted to a different kind of
+collective behavior in coupled oscillators systems. In particular, it will be shown
+that these interacting oscillators may, under certain conditions, synchronize or even
+form unexpected synchrony patterns known as chimera states. The presentation and
+definition of such states will be delayed to the end of the present section, after
+the introducing the concept of phase oscillators and their description
+through the Kuramoto model.
+
+For several centuries, the synchronization of oscillators has intrigued scientists
+of a number of disciplines. The first recorded observation of synchronization
+dates back to 1665, when Christiaan Huygens observed that two pendulum clocks
+mounted on the same beam synchronized their motion after some time~\cite{huygens1673horologium}.
+Only a few years later, in 1680, Engelbert Kaempfer reported the same phenomenum
+in a population of glowworms in Siam~\cite{kaempfer1727history}. Since then, synchronization has been
+reported in populations of fireflies~\cite{buck1988synchronous}, pacemaker cells~\cite{michaels1987mechanisms}, 
+laser arrays~\cite{vladimirov2003synchronization}, Josephson junctions~\cite{wiesenfeld1998frequency}, 
+to name a few. 
+
+Through the examples mentioned above, it is clear that synchronization is a universal
+and robust phenomenon which does not depend on the particular laws governing each system.
+Consequently, its mathematical description should be kept as abstract and universal as possible.
+Then what could be the common feature of all these oscillators, that could serve as a starting
+point for a universal description? They are all coupled {\em self-sustained oscillators}, i.e. active
+units that, isolated from the rest, would oscillate indefinitely with their own rythm. 
+As it will be explained in the following section, the dynamics of these oscillators--despite
+their diversity--can be reduced to a single universal quantity: their phase.
+
+
+% Probably the most outstanding contribution
+% in this direction was made by Yoshiki Kuramoto who developed the phase approximation
+% approach, allowing for a universal description of coupled oscillators. More specifically,
+% he argued that, under the assumption of weak coupling, 
+
 \subsection{Phase oscillators}
 \label{sec:phase_oscillators}
 
+Consider a self-sustained oscillator with a natural frequency $\omega$, described by the following
+system of $M$ ordinary differential equations,
+
+\begin{equation}
+    \dfrac{d \mathbf{x}}{dt} = \mathbf{f}(\mathbf{x}), \qquad \mathbf{x} \in \mathbb{R}^M.
+    \label{eq:pre_phase_osc}
+\end{equation}
+
+In phase space, the oscillation can be represented by a stable limit cycle, i.e. 
+a closed isolated attractrive trajectory. Due to its attractive nature, trajectories in the vicinity
+of the limit cycle, or more specifically, in its bassin of attraction, will eventually converge to it.
+Therefore, under the assumption of weak perturbation or coupling, the trajectory of the oscillator will
+only slightly deviate from the limit cycle, and rapidly return to it. Hence, the dynamics
+of the oscillator's amplitude can be neglected since it will remain close to that of the
+limit cycle. Only one variable remains relevant: the {\em phase} of the oscillator.
+
+The asymptotic phase $\theta$, or phase for short, is defined
+as a monotonically and uniformly increasing variable in time that wraps around the limit cycle,
+this is to say, it grows uniformly from $0$ to $2\pi$ in one period $T$. 
+In other words, the phase obeys the following relation,
+
+\begin{equation}
+    \dfrac{d\theta}{dt} = \omega.
+    \label{eq:pre_phase_osc_phase}
+\end{equation}
+
+Moreover, the definition of the phase can be extended
+to the whole basin of attraction of the limit cycle, by assigning the same phase to all points
+which eventually converge (in the absence of perturbation) to the same point in the limit cycle.
+The set of points with the identical phase is called an {\em isochron}.
+
+With the phase defined, a relation between the phase and the state $\mathbf{x}$ of the oscillator 
+can be established through,
+\begin{equation*}
+    \dfrac{d\theta(\mathbf{x})}{dt} = \nabla_\mathbf{x} \theta \cdot \dfrac{d\mathbf{x}}{dt},
+\end{equation*}
+
+\noindent where $\nabla_\mathbf{x} \theta$ is the gradient of the phase with respect to $\mathbf{x}$. Combining
+Eqs.~(\ref{eq:pre_phase_osc}) and (\ref{eq:pre_phase_osc_phase}), the above equation takes the form,
+\begin{equation}
+    \nabla_\mathbf{x} \theta \cdot \mathbf{f(\mathbf{x})} = \omega.
+\end{equation}
+
+
+At this stage, the phase may not seem to be a particularly useful quantity. However, in the following
+scenario, a glimpse of its power will be appreciated.
+
+\subsection{Mutual synchronization and the Adler equation}
+
+Consider the case of two weakly coupled oscillators 
+with natural frequencies $\omega_1$ and $\omega_2$, described by
+\begin{align}
+    \dfrac{d\mathbf{x}_1}{dt} &= \mathbf{f}_1(\mathbf{x}_1) + \varepsilon \mathbf{p}_1(\mathbf{x}_1, \mathbf{x}_2), \\
+    \dfrac{d\mathbf{x}_2}{dt} &= \mathbf{f}_2(\mathbf{x}_2) + \varepsilon \mathbf{p}_2(\mathbf{x}_2, \mathbf{x}_1),
+\end{align}
+
+\noindent where $\varepsilon$ is the (small) coupling strength and $\mathbf{p}_1$, $\mathbf{p}_2$ are the interaction terms.
+As previously mentioned, the weak coupling will only slightly perturb the trajectory of the oscillators
+from their limit cycles. Hence, the phases can still be defined in the vicinity of the limit cycles. Furthemore,
+there will be a small correction to Eq.~(\ref{eq:pre_phase_osc_phase}) due to the coupling, which can be written as
+\begin{align}
+    \dfrac{d\theta_1}{dt} &= \nabla_{\mathbf{x}_1} \theta_1 \cdot \dfrac{d\mathbf{x}_1}{dt}, \nonumber \\
+                    &= \nabla_{\mathbf{x}_1} \theta_1 \cdot (\mathbf{f}_1(\mathbf{x}_1) + \varepsilon \mathbf{p}_1(\mathbf{x}_1, \mathbf{x}_2)), \nonumber \\
+                    &= \omega_1 + \varepsilon \nabla_{\mathbf{x}_1} \theta_1 \cdot \mathbf{p}_1(\mathbf{x}_1, \mathbf{x}_2),
+\end{align}
+
+\noindent and similarly for the second oscillator. The second term in the right hand side is small, and thus, deviations
+of $\mathbf{x}_1$ to its limit cycle can be neglected. As a result, $\mathbf{p}_1(\mathbf{x}_1, \mathbf{x}_2)$ can be directly
+evaluated at the limit cycle. The benefit of this approximation is that, at the limit cycle, there is
+an invertible mapping between $\theta_1$ and $\mathbf{x}_1$, and thus, the dependence on $\mathbf{x}_{1,2}$
+can be replaced by a dependence on $\theta_{1,2}$. This allows to write the phase equations in closed form,
+
+\begin{align}
+    \dfrac{d\theta_1}{dt} &= \omega_1 + \varepsilon q_1(\theta_1, \theta_2), \\
+    \dfrac{d\theta_2}{dt} &= \omega_2 + \varepsilon q_2(\theta_2, \theta_1).
+\end{align}
+
+The above equations are much simpler in form than the original system. This, however, comes at a cost: 
+the functions $q_{1,2}$ are not known, and their determination is not straightforward. Nevertheless,
+it is possible to make some reasonable approximations to derive a simple expression for these functions.
+For instance, consider the case of nearly identical oscillators, i.e. $\omega_1 \approx \omega_2$,
+with $\delta = \omega_1 - \omega_2$ is the frequency detuning, which can be considered positive
+without loss of generality. Expanding the interaction terms as a double Fourier
+series in $\theta_{1,2}$ yields the following expression for $q_{1,2}$,
+
+\begin{align*}
+    q_1(\theta_1, \theta_2) &= \sum_{k,l} a_{k,l} e^{i(k\theta_1 + l\theta_2)},\\
+    q_2(\theta_2, \theta_1) &= \sum_{k,l} b_{k,l} e^{i(k\theta_1 + l\theta_2)}.
+\end{align*}
+
+At order zero, the phases evolve independently of each other: $\theta_{1,2} = \omega_{1,2} t$.
+Thus, by substituting in the above equations, it is possible to observe slow and fast varying terms.
+The fast oscillations can be averaged out, leaving only the slow rotations that satisfy the resonance
+condition: $k\omega_1 + l\omega_2 \approx 0$. Since the frequencies are nearly identical, this
+condition is satisfied for $l = -k$, and the averaged Fourier expansions become,
+
+\begin{align*}
+    q_1(\theta_1, \theta_2) &= \sum_{k} a_{k,-k} e^{ik(\theta_1 - \theta_2)},\\
+    q_2(\theta_2, \theta_1) &= \sum_{k} b_{k,-k} e^{ik(\theta_2 - \theta_1)}.
+\end{align*}
+
+It can be noted that the coupling term now depends only on the phase difference
+$\psi = \theta_1 - \theta_2$. Exploiting this fact, the equation for $\psi$ can be written
+in closed form as,
+
+\begin{equation}
+    \dfrac{d\psi}{dt} = \delta + \varepsilon q(\psi),
+    \label{eq:pre_gen_adler}
+\end{equation}
+
+\noindent where $q(\psi) \equiv q_1(\psi) - q_2(-\psi)$. In the case of reciprocal coupling $q_1(\psi) = q_2(\psi)$,
+$q$ becomes an odd function. The simplest choice for a $2\pi$-periodic odd function is, of course, 
+the sine function $q(\psi) = \sin(\psi)$. Replacing this function in Eq.~(\ref{eq:pre_gen_adler})
+gives the Adler equation~\cite{adler1946study},
+
+\begin{equation}
+    \dfrac{d\psi}{dt} = \delta + \varepsilon \sin(\psi).
+    \label{eq:pre_adler}
+\end{equation}
+
+Notably, the Adler equation predicts the emergence of mutual synchronization through a saddle-node
+bifurcation at $\delta = |\varepsilon|$. More specifically, for $\delta < |\varepsilon|$
+and $\varepsilon < 0$ ($\varepsilon > 0$) there exists 
+a stable (unstable) fixed point at $\psi_{-} = -\arcsin(\delta/\varepsilon)$ and an unstable (stable)
+fixed point at $\psi_{+} = \pi + \arcsin(\delta/\varepsilon)$. In other words, if the detuning
+is small enough (relative to the coupling strength), then the oscillators will synchronize with
+a non vanishing phase difference, in which case they are said to be {\em phase locked}. Moreover,
+depending on the sign of the coupling strength, two cases can be distinguished. If $\varepsilon < 0$,
+the phase difference lies around zero and the oscillators try to synchronize in phase, in such
+case the coupling is said to be attractive. On the contrary,  if $\varepsilon > 0$, the phase difference
+lies around $\pi$ and the oscillators try to synchronize in anti-phase, and thus the coupling is
+repulsive, corresponding to Huygens' original observation.
+
+
 \subsection{Kuramoto model}
+
+Previously, the emergence of synchronization was shown in a system of two coupled oscillators.
+However, in nature, synchronization is more frequently observed in large populations of oscillators. In such case,
+an extension of the Adler equation to a system of $N$ oscillators is necessary. Intuitively,
+and as a first approximation, the coupling between the oscillators can be assumed to be global (or all-to-all),
+and equally strong for all pairs of oscillators. This is the essence of the Kuramoto 
+model~\cite{kuramoto1975model,kuramoto1984chemical},
+
+\begin{equation}
+    \dfrac{d\theta_i}{dt} = \omega_i + \dfrac{K}{N} \sum_{j=1}^{N} \sin(\theta_j - \theta_i),
+    \label{eq:pre_kuramoto}
+\end{equation}
+
+\noindent where $\theta_i$ is the phase of the $i$-th oscillator, $\omega_i$ its natural frequency, and $K$ the coupling strength.
+It is noteworthy to mention that the natural frequencies are not necesarrily identical. In fact, they
+are tipically drawn from a unimodal symmetric distribution, such as a Lorentzian or Gaussian distribution.
+The above equation can be manipulated into a simpler form by introducing the Kuramoto order paramater
+defined as follows,
+
+\begin{equation}
+    r e^{i\psi} = \dfrac{1}{N} \sum_{j=1}^{N} e^{i\theta_j}.
+    \label{eq:pre_kuramoto_order}
+\end{equation}
+
+Through the above definition, it can be infered that $r$ is a mesure of the degree of synchronization
+of oscillators. More specifically, $r = 0$ represents a completely incoherent state, where the phases
+are uniformly distributed on the circle. On the other hand, $r = 1$ corresponds to a completely coherent 
+state with identical phases. In addition, the phase $\psi$ represents the average phase of the population.
+
+
+Note that the Kuramoto model, Eq.~(\ref{eq:pre_kuramoto}), can be rewritten in terms of the order 
+parameter as,
+\begin{align}
+    \dfrac{d\theta_i}{dt} &= \omega_i 
+        + \text{Im} \left(\dfrac{K}{N}\sum_{j=1}^{N} e^{i(\theta_j-\theta_i)}\right), \nonumber \\
+    &= \omega_i + K \text{ Im} \left(r e^{i(\psi - \theta_i)}\right), \nonumber \\
+    &= \omega_i + K r \sin(\psi - \theta_i).
+    \label{eq:pre_kuramoto_mean_field}
+\end{align}
+
+In this form, the oscillators seem to be effectively decoupled from each other, and coupled only to the
+mean field quantities $r$ and $\psi$. Of course, this is only in appearance, since the
+coupling between pairs of oscillators remains, though it is mediated by the order parameter. In fact,
+the strength of the coupling with the mean field is proportional to the degree of synchrony $r$. 
+Consequently, the more synchronized the population is, the stronger the coupling to the mean field becomes, and thus,
+even more oscillators are encouraged to synchronize, which in turn increases the coupling strength.
+This positive feedback loop is the mechanism underlying spontaneous synchronization. For the
+feedback loop to exist, it can be expected that a critical coupling strength $K_c$
+must be reached. Otherwise, the coupling would be too weak to overcome the dispersion of the
+oscillator's natural frequencies, and synchronization would not be possible.
+
+The previous analysis can be made quantitative in the limit of infinitely many oscillators, $N\to\infty$,
+by considering the contribution of the synchronous and
+asynchronous oscillators to the mean field, in terms of the mean field itself. 
+The resulting relation is a self-consistency equation which can be solved analytically
+in the case of a Lorentzian distribution,
+
+\begin{equation}
+    g(\omega) = \dfrac{\gamma}{\pi(\omega^2 + \gamma^2)},
+\end{equation}
+
+\noindent where $\gamma$ is the width of the distribution. The solution of the self-consistency equation
+predicts a critical coupling strength $K_c = 2\gamma$ for the onset of synchronization. For
+coupling strengths slightly larger than the critical value $K_c$, the order parameter 
+$r$ grows continuously from zero following a square root law, 
+$$r = \sqrt{1 - \frac{K_c}{K}},$$
+
+\noindent revealing partially synchronized states that asymptotically approach the fully synchronized state
+as $K\to\infty$. 
+
+As we have seen, despite the simplicity of the Kuramoto model, it is extremely succesful
+in describing the transition to synchronization in large populations of oscillators. Furthermore,
+it can be easily tweaked to describe more complex scenarios in a variety of ways. For instance,
+extensive studies have been carried out of different coupling topologies, both in the context
+of networks, where the coupling strength becomes an adjacency matrix~\cite{rodrigues2016kuramoto},
+and in the context of
+spatially extended systems, where the coupling essentially becomes a convolution kernel~\cite{omelchenko2018mathematics}.
+Additionally, more intricate coupling terms can be envisaged, with higher harmonics~\cite{daido1996onset}, or
+even going beyond pairwise interactions and include many-body interactions~\cite{boccaletti2023structure}. Among these 
+countless extensions, Kuramoto and Battogtokh experimented with the combined use of a non-local coupling
+kernel, and the inclusion of a phase lag in the coupling term~\cite{kuramoto2002coexistence}. Surprisingly, they stumbled
+upon a new kind of synchrony pattern, which later became known as a chimera state.
 
 \subsection{Chimera states}
 
-\subsection{Ott-Antonsen manifold reduction}
+The traditional Kuramoto model for non-identical oscillators predicts 
+the existence of either incoherent or partially coherent states, depending on the coupling strength.
+It turns out that the addition of a phase lag
+in the coupling term (somewhat similar to a time delay), along with a non-local coupling
+kernel, can lead to the emergence of an intermediate equilibrium state, where the population splits 
+into a coherent and an incoherent domain that coexist in space. Unexpectedly, this state can form
+even if the oscillators are completely identical! In such case, despite the homogeneity of the system,
+the oscillators spontaneously break the symmetry and self-organize into two distinct groups.
+This remarkable state was first reported by Kuramoto and Battogtokh~\cite{kuramoto2002coexistence},
+and later named chimera state by Abrams and Strogatz~\cite{abrams2004chimera}. 
+
+Ever since their discovery two decades ago, chimera states have been observed in a wide
+variety of systems and have been the subject of intense research. Specifically, they have
+been theoretically predicted in one-, two-, and three-dimensional spatially extended systems,
+in arbitrary networks, and even in more realistic systems beyond the Kuramoto model,
+see~\cite{panaggio2015chimera,scholl2016synchronization,omelchenko2018mathematics,
+haugland2021changing,majhi2019chimera,parastesh2021chimeras} for comprehensive reviews. 
+Experimental observations, although much less abundant than theoretical studies, have proved
+that chimeras are not just a mathematical curiosity or {\em chimera} (in the literary sense of
+a thing which is hoped for but impossible to achieve), but a real phenomenon observed in
+optical~\cite{hagerstrom2012experimental}, chemical~\cite{tinsley2012chimera, nkomo2013chimera,totz2018spiral} and 
+mechanical system~\cite{martens2013chimera}, among others~\cite{schmidt2014coexistence, viktorov2014coherence, wickramasinghe2013spatially}.
+ 

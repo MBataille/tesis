@@ -1,27 +1,121 @@
 \chapter{Introduction}
-Las partículas o corpúsculos han sido un concepto fundamental y transversal en la física. Clásicamente se describen como un punto material con una masa y posición bien definida. Sin embargo, con el desarrollo de la mecánica cuántica, hemos aprendido que las partículas microscópicas son soluciones localizadas de un campo corrrespondiente a la amplitud de la probabilidad. Por otro lado, en sistemas macroscópicos fuera del equilibrio, producto del balance entre la inyección y disipación de energía, estos sistemas pueden exhibir soluciones localizadas que, en analogía con el caso anterior, usualmente se denonominan soluciones tipo partícula \cite{LS:b}. Estas estructuras localizadas han sido observadas en diversos sistemas de dinámica de fluidos, óptica, química e incluso ecología \cite{LS:a, LS:b}. Dependiendo del contexto físico en que se observan también reciben el nombre de solitones disipativos, patrones localizados, quimeras, entre otros. 
 
-Tradicionalmente, la descripción matemática de las estructuras localizadas se ha realizado usando modelos de reacción difusión \cite{RD:VanagEpstein, RD:Winfree, RD:Barkley}. Como el nombre sugiere el acoplamiento espacial ocurre mediante un término de difusión y, por lo tanto, es puramente local. No obstante, diversos sistemas ópticos, neuronales e incluso en vegetación presentan un acoplamiento más complejo y de largo alcance, usualmente llamado acoplamiento no local \cite{NonLocal:Optics, NonLocal:Neuron, NonLocal:Vegetation}. En estos casos se ha encontrado que el término no local es responsable de la estabilización de las soluciones tipo partícula \cite{NonLocal:Stabilize, Raman:Stabilize} y por tanto es fundamental en el entendimiento de estas soluciones.
+\label{ch:intro}
 
+Almost a century ago, our understanding of elementary or quantum particles went
+through a complete change of paradigm. Indeed, what was originally thought
+to be a microscopic speck of matter with a well-defined position, momentum and size
+was discovered instead to be a localized field that occupies all space, 
+and whose amplitude is related to the probability 
+density~\cite{merzbacher1998quantum,messiah2014quantum,gross1962particle}.
+As a consequence,
+the former quantities of position and momentum were replaced by expectation values.
+Conversely, the concept of a particle as a localized field was extended to 
+meso- and macroscopical systems, typically described by extended fields.
+In fact, Nicolis and Prigogine argued that the energy transfer present in these systems
+allows for a rich variety of complex and stable structures to form, including localized 
+structures~\cite{prigogine1977self, pismen2006patterns}.
+These localized states or particle-like solutions are thus supported by a robust balance between 
+gains and losses and have been observed in a variety of systems due to their 
+universality~\cite{umbanhowar1996localized,aranson2006patterns,minardi2010three,verschueren2013spatiotemporal,yi2018imaging}. 
 
-{\bf En esta tesis nos enfocaremos en la dinámica de las estructuras localizadas en sistemas no locales}. En particular, buscaremos entender los mecanismos que permiten la propagación de estas soluciones tipo partícula. Para lograrlo, estudiaremos dos sistemas diferentes: solitones disipativos en una cavidad de cristal de fibra fotónico \cite{Raman:Agrawal}, y quimeras espirales en redes bidimensionales de osciladores de fase heterogéneos. 
+Traditionally, the mathematical description of localized structures has been carried out using
+reaction diffusion models or their generalizations with higher order 
+derivatives~\cite{tlidi1994localized,coullet2000stable,knobloch2015spatial}.
+As the name suggests, the spatial coupling occurs through diffusive (or hyperdiffusive) terms and, 
+therefore, is solely local. Nevertheless, various optical~\cite{gelens2007impact}, 
+neural~\cite{coombes2005waves} and even vegetation~\cite{lefever1997origin} systems present a more 
+complex and far-reaching coupling, usually called nonlocal coupling. In these cases,
+it has been found that the nonlocal term gives rise to richer dynamics and is often responsible for the
+stabilization of particle-like solutions~\cite{fernandez2013strong, clerc2020time}. Mathematically, the nonlocal term is usually modeled as an
+integral operator, which strongly limits the analytical and numerical tools available to study these systems.
+Consequently, the dynamics of localized structures in nonlocal systems are still not well understood.
 
-En el primer caso, estudiaremos solitones brillantes y oscuros en resonadores de cavidad de cristal de fibra óptica. Los solitones disipativos temporales han recibido una enorme atención estas últimas décadas por su capacidad de generar {\em frequency combs} o peines de frecuencia que han revolucionado diversas áreas de la ciencia y tecnología, en particular la espectroscopía de alta precisión y metrología \cite{Raman:FB,Raman:PH}. La mayor parte de estos esfuerzos científicos se han centrado en la generación de solitones mediante un balance entre la nolinearidad Kerr del material y el acoplamiento local temporal por ejemplo debido a la dispersión \cite{Raman:AkhAnk}. No obstante, en materiales amorfos como lo son los cristales de fibra óptica emerge un acoplamiento no local temporal debido a una respuesta retardada del material a la excitación electromagnética que se conoce como scattering estimulado de Raman \cite{Raman:SKV, Raman:LCC}.  Gracias al efecto Raman es posible la estabilización de estas estructuras localizadas \cite{Raman:Stabilize}. En este trabajo, buscaremos estudiar cómo son afectadas las estructuras localizadas debido al efecto Raman y la nolinearidad Kerr, y en particular caracterizar precisamente cómo se auto-organizan estas soluciones en función de los parámetros del sistema.
-
-Recientemente hemos podido reducir el modelo paradigmático de Lugiato-Lefever en torno a la emergencia de la biestabilidad encontrando así la ecuación de Swift-Hohenberg. De forma preliminar, hemos encontrado solitones brillantes y oscuros en la ecuación de Swift-Hohenberg con efecto Raman, en la región de coexistencia del estado homogéneo y el estado patrón. Además, debido al acoplamiento no local por efecto Raman, la simetría del sistema se rompe, lo que nos permite encontrar una propagación de las estructuras localizadas y una desconexión de las ramas de solución dando origen a una cadena de isolas, ver figura.
-
-
-En el segundo caso, analizaremos estados ligados de dos quimeras espirales en redes de osciladores acoplados espacialmente de forma no local. Las quimeras espirales se caracterizan por tener un núcleo incoherente donde los osciladores están desincronizados, rodeado por una estructura coherente en forma de espiral donde los osciladores están sincronizados. Estas soluciones fueron reportadas por primera vez por Kuramoto y Shima hace dos décadas al acoplar osciladores de forma no local \cite{SpiralChimera:Kuramoto}. Durante estas últimas dos décadas han sido ampliamiente estudiadas en diversos sistemas neuronales, eléctricos e incluso en ecología \cite{SC:FHN2018, SC:Eco2018, SC:BA2020}, además de ser observadas experimentalmente en redes de osciladores químicos \cite{SC:Totz2017, SC:Totz2020}. Sin embargo, la mayor parte de estos estudios se han centrado en quimeras estacionarias y poco se conoce sobre las quimeras propagativas \cite{SC:Omelchenko2020, SC:Bataille}. 
- En trabajos preliminares, encontramos un nuevo tipo de quimera espiral: un estado ligado de dos espirales propagativas que pueden moverse en una línea recta o siguiendo una trayectoria más compleja.
-
-Mediante simulaciones preliminares hemos logrado encontrar 3 clases de quimeras espirales propagativas: simétricas, asimétricas y cicloidales, junto con su región de estabilidad correspondiente, ver figura~\ref{fig:SpiralChimera}. Las quimeras simétricas poseen simetría de reflexión y se propagan en la dirección de su eje de simetría mientras que en las quimeras asimétricas, una espiral se vuelve más grande que la otra y se propagan en una dirección inclinada. Por último las espirales cicloidales presentan, además de un movimiento de traslación, una oscilación de sus núcleos que también suele llamarse {\em meandering} \cite{SC:Bataille}.
+The aim of this dissertation is to provide an in-depth study and characterization of
+the dynamics of localized structures in non-local systems. In particular, we will focus 
+on two different systems: dissipative solitons in a photonic
+crystal fiber cavity, and spiral chimeras in two-dimensional networks of heterogeneous phase oscillators. 
+In both cases, we observe the emergence of uniformly moving localized structures due to different mechanisms,
+which we will identify and analyze.
 
 \section{Contents}
 
+This dissertation is a compilation of four articles that have been published or submitted to peer-reviewed journals.
+For each article, there is an associated chapter containing a brief introduction to the subject, 
+along with a short discussion at the end. 
+
+The first three chapters of this dissertation are dedicated
+to the theoretical and numerical background necessary for the subsequent chapters. More specifically,
+Chapter~\ref{ch:intro} corresponds to the present introduction, and provides an overview of the context and 
+scope of the dissertation. Chapter~\ref{ch:preliminary} introduces the main concepts and theory needed 
+to approach the current study. In Chapter~\ref{ch:continuation}, an introduction to numerical continuation,
+the main numerical method used in the following articles, is presented. 
+
+The following four chapters contain the core of the dissertation, which is divided into two main parts. The first
+part contains Chapters~\ref{ch:isolas} and~\ref{ch:filtering}, and focuses on dissipative solitons in photonic crystal 
+fiber cavities, under different asymmetric nonlocal effects. Starting with Chapter~\ref{ch:isolas},
+the formation of isolas of solitons due to the Raman effect is studied. In Chapter~\ref{ch:filtering}, a similar 
+system is considered under a different nonlocal coupling, arising from the addition of a spectral filter.
+
+On the other hand, the second part of the dissertation is devoted to the study of moving spiral wave chimeras
+in a two-dimensional array of nonlocally coupled phase oscillators. In particular, Chapter~\ref{ch:spirals}
+reveals the existence of these structures and characterizes their dynamics based on direct numerical simulations.
+Chapter~\ref{ch:travelingspirals} extends the analysis through numerical continuation and semi-analytical methods,
+and provides a detailed description of the bifurcations that lead to the creation, stabilization and disappearence of
+moving spiral chimeras. Finally, Chapter~\ref{ch:conclu} presents the main conclusions of this thesis.
+
+
+\section{Objectives}
+The main objective of this dissertation is to study and characterize the creation, stabilization and disappearence
+of propogative localized structures in nonlocal systems. To achieve this, the following specific objectives were proposed.
+\begin{itemize}
+  \item Identify and understand the different physical mechanisms responsible for the propagation of
+  localized structures.
+  \item Classify the different types of dynamics through an extensive exploration of the parameter space.
+  \item Develop and implement a numerical method for the continuation of complex traveling solutions in
+  one- and two-dimensional nonlocal systems.
+  \item Identify and characterize the bifurcations that lead to the creation, stabilization and disappearence 
+  of localized structures through the use of numerical continuation techniques.
+\end{itemize}
+
 \section{Common abbreviations}
 
-LS. Localized structures
-DS. Dissipative soliton
-SHE. Swift-Hohenberg Equation
-LLE. Lugiato-Lefever Equation
+\begin{itemize}
+  \item {\bf LS}: Localized structures
+  \item {\bf DS}: Dissipative soliton
+  \item {\bf SHE}: Swift-Hohenberg Equation
+  \item {\bf LLE}: Lugiato-Lefever Equation
+  \item {\bf NLS}: Nonlinear Schrödinger Equation
+  \item {\bf KdV}: Korteweg-de Vries Equation
+  \item {\bf HHS}: Homogeneous Steady State
+  \item {\bf SRS}: Stimulated Raman Scattering
+\end{itemize}
+
 \section{Contribution statement}
+
+\subsection{Isolas of localized structures and Raman–Kerr frequency combs in micro-structured resonators (Chaos, Solitons \& Fractals 174, 113808)}
+Marcel G. Clerc and Mustapha Tlidi conceptualized the study and designed the research. 
+{\bf Martin Bataille-Gonzalez} implemented and performed numerical simulations and continuation. 
+Marcel G. Clerc and Mustapha Tlidi wrote the manuscript. {\bf Martin Bataille-Gonazalez} 
+contributed to editing and revising the manuscript.
+
+
+\subsection{Dissipative Soliton Combs with Spectral Filtering. (submitted to Physical Review A)}
+Marcel G. Clerc and Mustapha Tlidi conceptualized the study and designed the research. {\bf Martin Bataille-Gonzalez},
+Bilal Kostet and Youri Soupart performed research (numerical integration, implementation of numerical continuation, and analysis of numerical data).
+Bilal Kostet and Mustapha Tlidi developped the analytical framework.
+Bilal Kostet, Youri Soupart, Mustapha Tlidi and Marcel Clerc wrote the manuscript. 
+{\bf Martin Bataille-Gonazalez} contributed to editing and revising the manuscript.
+
+\subsection{Moving spiral wave chimeras (Physical Review E, 104(2), L022203)}
+Oleh Omel'chenko conceptualized the study and designed the research. {\bf Martin Bataille-Gonzalez} performed research (numerical integration, and analysis of numerical data).
+Marcel G. Clerc supervised the research and provided critical feedback. Oleh Omel'chenko and Marcel G. Clerc wrote the manuscript. 
+{\bf Martin Bataille-Gonazalez} contributed to editing and revising the manuscript.
+
+\subsection{Traveling spiral wave chimeras in coupled
+oscillator systems: emergence, dynamics, and
+transitions (New Journal of Physics 25, 103023)}
+Oleh Omel'chenko conceptualized the study and designed the research. 
+{\bf Martin Bataille-Gonzalez} and Oleh Omel'chenko implemented and performed numerical simulations and continuation.
+Marcel G. Clerc and Edgar Knobloch supervised the research and provided critical feedback. Oleh Omel'chenko and Edgar Knobloch wrote the manuscript. 
+{\bf Martin Bataille-Gonazalez} and Marcel G. Clerc contributed to editing and revising the manuscript.

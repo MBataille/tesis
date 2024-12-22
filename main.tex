@@ -37,6 +37,8 @@
 \usepackage{graphicx}
 \usepackage{sidecap}
 \usepackage{pdfpages}
+\setlength{\marginparwidth}{2cm}
+\usepackage{todonotes}
 \usepackage[sorting=none, citestyle=numeric-comp]{biblatex}
 \bibliography{bibliografia}
 
@@ -49,25 +51,15 @@
 \frontmatter
 \maketitle
 
-\begin{resumen}
-\lipsum[1-4]
-\end{resumen}
 
-% opcional: incluir para tesis en inglés;
-%  en este caso hay que tener el resumen y abstract
-%   en ambos idiomas
-\begin{abstract}
-\lipsum[1-4]
-\end{abstract}
+\input{chapters/resumen.tex}
 
 \begin{dedicatoria}
-My biggest enemy is me ever since day one. \\
-- Stefani Germanotta.
+tbd. \\
+- tbd.
 \end{dedicatoria}
 
-\begin{thanks}
-\lipsum[1-2]
-\end{thanks}
+\input{chapters/agradecimientos.tex}
 
 \tableofcontents
 % \listoftables % opcional
