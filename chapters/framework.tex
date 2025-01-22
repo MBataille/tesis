@@ -32,7 +32,9 @@ In the case of a nonlinear dynamical system, it becomes extremely difficult, and
 general explicit solutions of Eq.~(\ref{eq:def_ds}). But it turns out that in most cases, an in-depth
 description of the model can be provided by studying only the steady states ($\bm{f}(\bm{u}, \eta) = 0$) and their qualitative changes as parameters 
 are varied. In other words, the problem can be reduced to finding the {\em equilibria} and {\em bifurcations} of the system.
-In the following section, the elementary bifurcations a system can experience will be described.
+In the following section, the elementary bifurcations a system can experience will be described. It is
+important to mention that the bifurcations described here correspond to codemension one bifurcations, i.e. 
+bifurcations that occur as a single parameter is varied.
 
 \section{Bifurcations}
 
@@ -60,7 +62,7 @@ for which a pair of stable and unstable equilibria can be created (or destroyed)
 as the control parameter is changed~\cite{strogatz2018nonlinear}. Although they 
 arise in a huge variety of systems~\cite{Jackson_1989}, close to the bifurcation 
 point, the dynamics can always be reduced to
-the following minimal or {\em normal form}.
+the following one dimensional minimal or {\em normal form}.
 
 \begin{equation}
     \dfrac{du}{dt} = \eta - u^2
@@ -85,7 +87,7 @@ starting from positive (negative) values, the two equilibria attract (repel) eac
     Black (white) circles represent
     stable (unstable) fixed points. (b) Bifurcation diagram showing
     the creation of a stable-unstable pair of fixed points. Solid (dashed) line represents
-    stable (unstable) branch.}
+    stable (unstable) branch. Arrows indicate the flow direction.}
     \label{fig:pre_bifs_sn}
 \end{figure}
 
@@ -165,7 +167,7 @@ is observed, i.e. $m=0$. In the context of statistical mechanics, this second-or
 transition can be described by a mean-field approximation from Landau 
 theory~\cite{landau2013statistical,kardar2007statistical}, where
 the free energy functional is expanded in (even) powers of $m$, thus arriving at exactly
-the pitchfork normal form, given by
+the pitchfork normal form, which is also one dimensional and given by
 
 \begin{equation}
     \dfrac{du}{dt} = \eta u - u ^ 3.
@@ -179,14 +181,14 @@ and two stable symmetric branches $u_\pm = \pm \sqrt{\eta}$ emerge.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{imagenes/framework/bif_pitch_f.pdf}
+    \includegraphics[width=\textwidth]{imagenes/framework/bif_pitch.pdf}
     \caption{Prototipical scenario for a pitchfork bifurcation. (a) Phase space
     showing both stable and unstable fixed points for different values of $\eta$. 
     Black circles represent stable fixed points, the grey circle represents a stable for $\eta < 0$
     and unstable for $\eta > 0$ fixed point. (b) Bifurcation diagram showing
     the emergence of two stable branches at the bifurcation, along with the change of
     stability of the trivial solution. Solid (dashed) lines represent
-    stable (unstable) branches.}
+    stable (unstable) branches. Arrows indicate the flow direction.}
     \label{fig:pre_bif_pitchfork}
 \end{figure}
 
@@ -204,8 +206,12 @@ relevant. The modified normal form corresponds to Eq.~(\ref{eq:pre_bif_pitchfork
 
 Moreover, due to the additional quintic term, the symmetric branches are stabilized 
 at a secondary saddle-node bifurcation point $\eta_{sn}$, as shown
-in Fig.~\ref{fig:pre_bif_subpitchfork}. It is important to mention that in subcritical
-bifurcation, a hysteresis loop is typically observed. 
+in Fig.~\ref{fig:pre_bif_subpitchfork}. It is important to mention that observing
+subcritical bifurcations through experiments or simulations will yield different
+results depending on whether the parameter is increased from the homogeneous state or decreased
+from the symmetry-broken state in the coexistence region. Crossing the coexistence region
+a discontinuous jump to the other branch will be observed, a phenomenon 
+more commonlu known as hysteresis.
 %For instance, Fig.~\ref{fig:pre_bif_subpitchfork}
 
 \begin{figure}[h]
@@ -270,7 +276,7 @@ There is, however, a subcritical variation
 of the Andronov-Hopf bifurcation in which the emerging limit cycle is unstable and may stabilize at a secondary bifurcation point.
 The normal form is similar to the subcritical pitchfork since the cubic term has now the opposite sign and a quintic term is added to ensure the solution is bounded.
 Due to the additional quintic term, the emerging limit cycle stabilizes at $\eta_{sn} = -\frac14$ through
-a saddle-node bifurcation.
+a saddle-node bifurcation of limit-cycles.
 
 \begin{equation}
     \dfrac{dA}{dt} = (\eta + i\omega) A + |A|^2 A - |A|^4A

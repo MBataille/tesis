@@ -27,13 +27,13 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="594.6768"
-     inkscape:cy="146.3711"
-     inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     inkscape:window-x="2552"
-     inkscape:window-y="1072"
+     inkscape:zoom="2"
+     inkscape:cx="667.25"
+     inkscape:cy="154.5"
+     inkscape:window-width="2560"
+     inkscape:window-height="1334"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer7" />
   <defs
@@ -554,6 +554,36 @@
        apply_no_weight="true"
        apply_with_weight="true"
        only_selected="false" />
+    <marker
+       style="overflow:visible"
+       id="TriangleStart-9"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-4" />
+    </marker>
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect662-5"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
   </defs>
   <g
      inkscape:groupmode="layer"
@@ -567,6 +597,13 @@
        x="8"
        y="13"
        transform="matrix(0.26652701,0,0,0.26458333,-0.01554943,0)" />
+    <path
+       style="fill:#000000;stroke:#000000;stroke-width:2.10142;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#TriangleStart-9)"
+       d="m 747.5,91.5 c 0,21.16767 0,42.33433 0,63.5"
+       id="path660-8"
+       transform="matrix(0.26458333,0,0,0.26458333,-25.215703,22.945983)"
+       inkscape:path-effect="#path-effect662-5"
+       inkscape:original-d="m 747.5,91.5 c 10e-4,21.16767 10e-4,42.33433 0,63.5" />
   </g>
   <g
      inkscape:label="Layer 1"
