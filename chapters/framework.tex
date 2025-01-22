@@ -6,7 +6,7 @@
 
 % [introducir bien el tema]. 
 
-The general form for a dynamical system is the following.
+The general form for a finite-dimensional dynamical system is the following.
 
 \begin{equation}
     \dfrac{d\bm{u}}{dt} = \bm{f}(\bm{u}, \eta), \qquad \bm{f} : \mathbb{R}^N \times \mathbb{R}^{n_\eta} \to \mathbb{R}^N.
@@ -18,6 +18,9 @@ concentrations of different chemicals, the population of certain species or the 
 of an electric field. The temporal evolution of the state of the system is thus determined by 
 the vector function $\bm{f}$. This function may, in turn, depend on one or more control
 parameters $\eta$ relevant to the modeled experiment (i.e. driving frequency, pumping power, etc.).
+Extensions of the above formulation can be envisaged, mainly in the form of partial differential equations
+or even integro-differential equations describing infinite dimensional systems. For the sake of simplicity,
+only finite-dimensional systems will be relevant for the following discussion.
 
 In this thesis, different dynamical systems in the form of Eq.~(\ref{eq:def_ds}) with a {\em nonlinear} function
 $\bm{f}$ will be considered. Although it might be argued that, at a fundamental level, the physical laws
@@ -37,7 +40,7 @@ One of the pioneers in identifying the importance of bifurcations in the study o
 was Henri Poincaré while studying the different stable
 configurations of a gravitating rotating fluid, along with their respective stability~\cite{poincare1885equilibre}. 
 In doing so, he coined the
-term {\em bifurcation}, refering to the point in the parameter space at which different solutions branch off from a another solution.
+term {\em bifurcation}, refering to the point in the parameter space at which different solutions branch off from another solution.
 To this day, his definition remains valid and, more formally, corresponds to a qualitative change 
 in the system's behavior, related to the transition between different equilibria or to the exchange of stability,
 as a control parameter is varied~\cite{strogatz2018nonlinear}.
@@ -284,22 +287,22 @@ a saddle-node bifurcation.
 \section{Localized Structures}
 \label{sec:fra_LS}
 
-% In the previous section, the simplest mechanisms for the emergence and
-% change of stability of solutions have been discussed, yet little attention
-% has been devoted to the solutions themselves. Indeed, in nonlinear dynamical
-% systems, an enormous variety of equilibria are possible. In this section,
-% special attention will be paid to one particular kind class of equilibria,
-% the so-called localized structures. 
+In the previous section, the simplest mechanisms for the emergence and
+change of stability of solutions have been discussed, yet little attention
+has been devoted to the solutions themselves. Indeed, in nonlinear dynamical
+systems, an enormous variety of equilibria are possible. In this section,
+special attention will be paid to one particular kind class of equilibria,
+the so-called localized structures. 
 
-Almost a century ago, our understanding of elementary or quantum particles went
-through a complete change of paradigm. Indeed, what was originally thought
-to be a microscopic speck of matter with a well-defined position, velocity and size
-was discovered instead to be a localized wave function lacking the former quantities.
-Half a century later, this change of paradigm carried over to meso- and macroscopical out-of-equilibrium
-systems. Nicolis and Prigogine~\cite{prigogine1977self} argued that the energy transfer present in these systems
-allows for complex and stable structures to form, such as localized structures. These localized states
-or particle-like solutions are supported by a robust balance between gains and losses and have been observed in a
-variety of systems due to their universality. 
+% Almost a century ago, our understanding of elementary or quantum particles went
+% through a complete change of paradigm. Indeed, what was originally thought
+% to be a microscopic speck of matter with a well-defined position, velocity and size
+% was discovered instead to be a localized wave function lacking the former quantities.
+% Half a century later, this change of paradigm carried over to meso- and macroscopical out-of-equilibrium
+% systems. Nicolis and Prigogine~\cite{prigogine1977self} argued that the energy transfer present in these systems
+% allows for complex and stable structures to form, such as localized structures. These localized states
+% or particle-like solutions are supported by a robust balance between gains and losses and have been observed in a
+% variety of systems due to their universality. 
 
 \begin{figure}[h]
     \centering
@@ -389,7 +392,7 @@ Moreover, the equation is variational, meaning that it minimizes a Lyapunov (or 
 $\mathcal{F}[u]$ such that,
 
 \begin{equation}
-    \mathcal{F} = \dfrac12 \int_{-\infty}^{\infty} -\varepsilon u^2 - \dfrac12 u^4 + \dfrac13 u^6 - (\nabla u)^2 + (\nabla^2 u)^2 \ d^dr.
+    \mathcal{F} = \dfrac12 \int_{-\infty}^{\infty} \left( -\varepsilon u^2 - \dfrac12 u^4 + \dfrac13 u^6 - (\nabla u)^2 + (\nabla^2 u)^2 \right) \ d^dr.
 \end{equation}
 
 As a result, the solutions of Eq.~(\ref{eq:pre_ls_she}) evolve into stationary states.
@@ -500,8 +503,9 @@ The two cases support different types of LSs, with the former presenting dark so
 The following analysis will be restricted to the anomalous dispersion regime, as it is the most relevant for subsequent
 chapters.
 
-The homogeneous steady states (HSS) of Eq.~(\ref{eq:pre_ls_lle}) can be found by setting $\partial_t E = \partial_{\tau}^2 E = 0$,
-and taking the modulus squared of the equation, yielding the following cubic equation for the intracavity amplitude $I = |E|^2$,
+The homogeneous steady states (HSS) of Eq.~(\ref{eq:pre_ls_lle}) can be found by replacing $\partial_t E = \partial_{\tau}^2 E = 0$
+into Eq.~(\ref{eq:pre_ls_lle}) and taking the modulus squared of the resulting equation, 
+yielding the following cubic equation for the intracavity amplitude $I = |E|^2$,
 in terms of the pump amplitude $I_0 = |E_0|^2$,
 
 \begin{equation}
